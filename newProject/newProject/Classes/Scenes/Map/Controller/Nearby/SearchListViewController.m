@@ -54,7 +54,7 @@
     BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
     citySearchOption.pageIndex = curPage;
     citySearchOption.pageCapacity = 50;
-    citySearchOption.city= @"beijing";
+    citySearchOption.city= @"北京";
     citySearchOption.keyword = _str;
     BOOL flag = [_poisearch poiSearchInCity:citySearchOption];
     if(flag)
