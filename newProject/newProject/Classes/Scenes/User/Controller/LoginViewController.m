@@ -10,13 +10,13 @@
 #import "registViewController.h"
 #import <AFNetworking.h>
 #import "User.h"
+#import <EaseMob.h>
 
 @interface LoginViewController ()
 //登录账号
 @property (weak, nonatomic) IBOutlet UITextField *loginNameLabel;
 //登录密码
 @property (weak, nonatomic) IBOutlet UITextField *loginPasswordLabel;
-
 @end
 
 @implementation LoginViewController
@@ -42,9 +42,17 @@
         alert.message = @"用户名或者密码不能为空";
         [weakSelf presentViewController:alert animated:YES completion:nil];
     }else{
-        
+        BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+        if (!isAutoLogin) {
+            [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.loginNameLabel.text password:self.loginPasswordLabel.text completion:^(NSDictionary *loginInfo, EMError *error) {
+                if (!error && loginInfo) {
+                    NSLog(@"登录成功");
+                    self.block(YES);
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            } onQueue:nil];
+        }        
     }
-
 }
 //跳转至注册页面
 - (IBAction)registerAction:(UIButton *)sender {

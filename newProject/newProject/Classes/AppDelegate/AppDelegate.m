@@ -11,6 +11,7 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <FMDB.h>
 #import "UserLocationManager.h"
+#import <EaseMob.h>
 
 @interface AppDelegate ()
 //地图管理对象
@@ -35,6 +36,9 @@
     [self baiduMap];
     
 
+    [[EaseMob sharedInstance] registerSDKWithAppKey:@"boon#easyboon" apnsCertName:@"istore_dev"];
+    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
 }
 

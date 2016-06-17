@@ -11,6 +11,7 @@
 #import "registViewController.h"
 #import "ActionTableViewCell.h"
 #import <UIImageView+WebCache.h>
+#import <EaseMob.h>
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 //用户头像
@@ -39,11 +40,6 @@
     self.userImgView.layer.cornerRadius = 75;
     self.userImgView.layer.masksToBounds = YES;
 
-    if (self.isLogin == NO) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
-    }else{
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
-    }
     
     //初始化数组
     self.array = @[@"收藏",@"完善信息",@"清除缓存",@"夜间模式",@"版本更新",@"关于我们"];
@@ -56,11 +52,36 @@
 //登录按钮
 - (void)loginAction{
     LoginViewController *loginVC = [[LoginViewController alloc]init];
+    loginVC.block = ^(BOOL isLogin){
+        self.isLogin = isLogin;
+    };
     [self.navigationController pushViewController:loginVC animated:YES];
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    if (self.isLogin == NO) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
+    }else{
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
+        
+    }
+    NSLog(@"%d",self.isLogin);
+}
+- (void)didLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error{
+    NSLog(@"已经登录");
 }
 //取消登录按钮
 - (void)CancelAction{
-    
+    [[EaseMob sharedInstance].chatManager asyncLogoffWithUnbindDeviceToken:YES completion:^(NSDictionary *info, EMError *error) {
+        if (!(error && info)) {
+            NSLog(@"退出成功");
+            self.isLogin = NO;
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
+        }else{
+            NSLog(@"%@",info);
+            NSLog(@"退出失败");
+        }
+    } onQueue:nil];
 }
 #pragma mark tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
