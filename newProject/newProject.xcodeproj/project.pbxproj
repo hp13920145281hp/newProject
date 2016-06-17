@@ -115,6 +115,10 @@
 		D6759E8B1D138AA400EE5743 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759E221D138AA400EE5743 /* UserViewController.m */; };
 		D6759E8C1D138AA400EE5743 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6759E231D138AA400EE5743 /* UserViewController.xib */; };
 		D6759E8D1D138AA400EE5743 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759E261D138AA400EE5743 /* User.m */; };
+		D68BE2EF1D13946F00266260 /* iconfont-dingwei@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EB1D13946F00266260 /* iconfont-dingwei@2x.png */; };
+		D68BE2F01D13946F00266260 /* iconfont-fuwuxiangqing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */; };
+		D68BE2F11D13946F00266260 /* iconfont-shijian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */; };
+		D68BE2F21D13946F00266260 /* sanjiaoyou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */; };
 		E42AB131DA8D9871C2CAD30E /* libPods-newProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828988210866BDBCD7CCAAC /* libPods-newProject.a */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +275,10 @@
 		D6759E231D138AA400EE5743 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		D6759E251D138AA400EE5743 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		D6759E261D138AA400EE5743 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D68BE2EB1D13946F00266260 /* iconfont-dingwei@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-dingwei@2x.png"; sourceTree = "<group>"; };
+		D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-fuwuxiangqing@2x.png"; sourceTree = "<group>"; };
+		D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-shijian@2x.png"; sourceTree = "<group>"; };
+		D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sanjiaoyou@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +378,10 @@
 				D6759D931D138AA400EE5743 /* 2.jpg */,
 				D6759D941D138AA400EE5743 /* 3.jpg */,
 				D6759D951D138AA400EE5743 /* 4.jpg */,
+				D68BE2EB1D13946F00266260 /* iconfont-dingwei@2x.png */,
+				D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */,
+				D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */,
+				D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */,
 				D6759D961D138AA400EE5743 /* a0146d086e061d95e1a708c179f40ad163d9ca7f.jpg */,
 				D6759D971D138AA400EE5743 /* fujin.jpg */,
 				D6759D981D138AA400EE5743 /* u=1172948899,1164345195&fm=21&gp=0.jpg */,
@@ -731,6 +743,7 @@
 			files = (
 				D6759E4D1D138AA400EE5743 /* 目的地.png in Resources */,
 				D6759E301D138AA400EE5743 /* a0146d086e061d95e1a708c179f40ad163d9ca7f.jpg in Resources */,
+				D68BE2F11D13946F00266260 /* iconfont-shijian@2x.png in Resources */,
 				D6759E8A1D138AA400EE5743 /* registViewController.xib in Resources */,
 				D6759E881D138AA400EE5743 /* LoginViewController.xib in Resources */,
 				D6759E441D138AA400EE5743 /* 地图.png in Resources */,
@@ -762,10 +775,12 @@
 				D6759E431D138AA400EE5743 /* 地图 (3).png in Resources */,
 				D6759E4E1D138AA400EE5743 /* 背景.jpg in Resources */,
 				D6759E611D138AA400EE5743 /* CityHotSeneryTableViewCell.xib in Resources */,
+				D68BE2EF1D13946F00266260 /* iconfont-dingwei@2x.png in Resources */,
 				D6759E651D138AA400EE5743 /* feedbackViewController.xib in Resources */,
 				D6759E401D138AA400EE5743 /* 发现.png in Resources */,
 				D6759E721D138AA400EE5743 /* hotel.jpg in Resources */,
 				D6759E351D138AA400EE5743 /* 个人 (1).png in Resources */,
+				D68BE2F01D13946F00266260 /* iconfont-fuwuxiangqing@2x.png in Resources */,
 				D6759E631D138AA400EE5743 /* CityNameCell.xib in Resources */,
 				D6759E5F1D138AA400EE5743 /* CityDetailViewController.xib in Resources */,
 				D6759E4F1D138AA400EE5743 /* 返回 (2).png in Resources */,
@@ -774,6 +789,7 @@
 				D6759E751D138AA400EE5743 /* nearby.png in Resources */,
 				D6759E6D1D138AA400EE5743 /* SearchListViewController.xib in Resources */,
 				D6759E541D138AA400EE5743 /* HostViewController.xib in Resources */,
+				D68BE2F21D13946F00266260 /* sanjiaoyou@2x.png in Resources */,
 				D6759D7C1D13874900EE5743 /* LaunchScreen.storyboard in Resources */,
 				D6759E7B1D138AA400EE5743 /* SearchListTableViewCell.xib in Resources */,
 				D6759E781D138AA400EE5743 /* traffic.jpg in Resources */,
