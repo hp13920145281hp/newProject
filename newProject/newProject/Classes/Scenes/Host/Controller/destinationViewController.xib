@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="destinationViewController">
+            <connections>
+                <outlet property="cityLable" destination="jqd-iS-dfe" id="eeA-Bd-HHa"/>
+                <outlet property="cityTableView" destination="ny2-mR-d49" id="OOK-U1-Z6l"/>
+                <outlet property="imageTableView" destination="bNm-JP-dkI" id="BUk-fb-01F"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-mR-d49">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="736"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="SEX-vw-y73"/>
+                    </constraints>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="景点.png" translatesAutoresizingMaskIntoConstraints="NO" id="u5a-vD-PYw">
+                    <rect key="frame" x="150" y="64" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="7EJ-HW-jxG"/>
+                        <constraint firstAttribute="width" constant="50" id="AgY-xe-uGr"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-JP-dkI">
+                    <rect key="frame" x="100" y="114" width="314" height="622"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  热门景点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-iS-dfe">
+                    <rect key="frame" x="200" y="64" width="214" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="tz7-zg-HR9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="u5a-vD-PYw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="0T3-Co-XjR"/>
+                <constraint firstAttribute="trailing" secondItem="jqd-iS-dfe" secondAttribute="trailing" id="1sg-Km-XD2"/>
+                <constraint firstAttribute="trailing" secondItem="bNm-JP-dkI" secondAttribute="trailing" id="4pV-pr-MG6"/>
+                <constraint firstItem="bNm-JP-dkI" firstAttribute="top" secondItem="u5a-vD-PYw" secondAttribute="bottom" id="TTa-iX-yoQ"/>
+                <constraint firstItem="bNm-JP-dkI" firstAttribute="leading" secondItem="ny2-mR-d49" secondAttribute="trailing" id="VkP-ge-CeA"/>
+                <constraint firstAttribute="bottom" secondItem="ny2-mR-d49" secondAttribute="bottom" id="Zkr-pQ-8Og"/>
+                <constraint firstItem="jqd-iS-dfe" firstAttribute="leading" secondItem="u5a-vD-PYw" secondAttribute="trailing" id="ed7-PQ-GdC"/>
+                <constraint firstItem="ny2-mR-d49" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gPA-3I-USC"/>
+                <constraint firstItem="bNm-JP-dkI" firstAttribute="top" secondItem="jqd-iS-dfe" secondAttribute="bottom" id="gyH-1X-CWF"/>
+                <constraint firstAttribute="bottom" secondItem="bNm-JP-dkI" secondAttribute="bottom" id="qmd-4K-fm4"/>
+                <constraint firstItem="u5a-vD-PYw" firstAttribute="leading" secondItem="ny2-mR-d49" secondAttribute="trailing" constant="50" id="wBY-gW-2Kg"/>
+                <constraint firstItem="ny2-mR-d49" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xx6-3s-hbT"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="景点.png" width="128" height="128"/>
+    </resources>
+</document>
