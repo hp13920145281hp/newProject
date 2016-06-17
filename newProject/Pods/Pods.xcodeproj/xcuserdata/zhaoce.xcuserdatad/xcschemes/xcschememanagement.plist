@@ -8,31 +8,61 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-newProject.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>TZImagePickerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Wilddog.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>56445AF484176B0DBB6105EA9ED8CD7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>606F4824B3C8DA6F947EA8C70DB2B0C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6BD495C90E91749EA9FF825667E8C24D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>842A25A604923AD5DAAAD6A73E5A91E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -53,6 +83,11 @@
 			<true/>
 		</dict>
 		<key>AA74A7CF4F6E7D22F9D619CA66242528</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB451EEAD78FAF86CE043644CD3A34E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
