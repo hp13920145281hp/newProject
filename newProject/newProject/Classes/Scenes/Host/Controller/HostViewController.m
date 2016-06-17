@@ -234,13 +234,14 @@
 #pragma mark ----------------------点击进入详情页,并且将详情页接口传过去
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SceneryDetailViewController *scenceryDetailVC = [[SceneryDetailViewController alloc]init];
-    SceneryModel *model = [SceneryModel new];
+    SceneryModel *model = self.sceneryArray[indexPath.row];
     if (_seg.selectedSegmentIndex == 0) {
         if (self.sceneryArray.count == 0) {
             return;
         }
         //拼接详情页面的接口地址
         scenceryDetailVC.detailUrl = [NSString stringWithFormat:kFJDetailUrl,model.id];
+        NSLog(@"%@",model.id);
     }else{
         scenceryDetailVC.detailUrl = [NSString stringWithFormat:kFJDetailUrl,model.id];
     }
