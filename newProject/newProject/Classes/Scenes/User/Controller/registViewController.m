@@ -7,6 +7,7 @@
 //
 
 #import "registViewController.h"
+#import <EaseMob.h>
 
 @interface registViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *registNameTF;
@@ -52,6 +53,12 @@
         //判断是否注册成功
         if ([alert.message isEqualToString:@"注册成功"]) {
             //如果注册成功,就隐藏弹框
+            [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.registNameTF.text password:self.registPasswordTF.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
+                if (!error) {
+                    NSLog(@"注册成功");
+                }
+            } onQueue:nil];
+
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
         }
     }];

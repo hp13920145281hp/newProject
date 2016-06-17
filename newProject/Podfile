@@ -5,4 +5,6 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'BaiduMapKit'
 pod 'TZImagePickerController'
+pod 'EaseMobSDK'
+pod 'Wilddog'
 end

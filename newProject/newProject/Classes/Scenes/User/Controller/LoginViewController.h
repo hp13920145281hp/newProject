@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^CompletionBlock)(BOOL isLogin);
+
 @interface LoginViewController : UIViewController
+//判断是否已经登录
+@property(copy,nonatomic)CompletionBlock block;
 
 @end
