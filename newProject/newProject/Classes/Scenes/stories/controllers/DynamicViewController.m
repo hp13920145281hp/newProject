@@ -13,6 +13,8 @@
 #import "AppDelegate.h"
 #import <FMDB.h>
 #import <BaiduMapAPI_Radar/BMKRadarManager.h>
+#import <Wilddog.h>
+
 
 @interface DynamicViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, TZImagePickerControllerDelegate>
 //动态输入框

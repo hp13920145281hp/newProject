@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -21,7 +21,7 @@
                 <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a0146d086e061d95e1a708c179f40ad163d9ca7f.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EvA-js-WCP">
                     <rect key="frame" x="0.0" y="10" width="414" height="726"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="屏幕快照 2016-06-14 下午4.44.55.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-iJ-vdH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultAvatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-iJ-vdH">
                     <rect key="frame" x="132" y="145" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="xvv-iJ-vdH" secondAttribute="height" multiplier="1:1" id="yL2-lR-amz"/>
@@ -41,13 +41,13 @@
                         <constraint firstAttribute="height" constant="30" id="Y3I-3S-emE"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ik5-Q4-msG">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ik5-Q4-msG">
                     <rect key="frame" x="111" y="343" width="259" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="TNV-5u-ouQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="密码2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xyq-Bc-8ee">
                     <rect key="frame" x="44" y="405" width="30" height="33"/>
@@ -129,9 +129,9 @@
         </view>
     </objects>
     <resources>
+        <image name="DefaultAvatar.png" width="70" height="70"/>
         <image name="a0146d086e061d95e1a708c179f40ad163d9ca7f.jpg" width="480" height="800"/>
         <image name="密码2.png" width="32" height="32"/>
-        <image name="屏幕快照 2016-06-14 下午4.44.55.png" width="1572" height="852"/>
         <image name="用户2.png" width="32" height="32"/>
     </resources>
 </document>

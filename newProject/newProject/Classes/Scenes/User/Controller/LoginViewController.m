@@ -61,6 +61,17 @@
     registViewController *registVC = [[registViewController alloc]init];
     [self.navigationController pushViewController:registVC animated:YES];
 }
+
+
+//收回键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

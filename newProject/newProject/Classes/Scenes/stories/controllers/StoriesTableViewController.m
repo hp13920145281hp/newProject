@@ -12,10 +12,14 @@
 #import "AppDelegate.h"
 #import <FMDB.h>
 #import "StoriesModel.h"
+#import <Wilddog.h>
 
 @interface StoriesTableViewController ()
 //数据数组
 @property (strong, nonatomic)NSMutableArray *dataArr;
+
+//记录登录的用户名
+@property (copy, nonatomic)NSString *userName;
 
 @end
 
@@ -53,10 +57,45 @@
 - (void)dynamicAC{
 //    NSLog(@"发布");
     //跳转到动态发表界面
-    DynamicViewController *dVC = [[DynamicViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:dVC];
-    [self presentModalViewController:nvc animated:YES];
+    if (_userName) {
+        DynamicViewController *dVC = [[DynamicViewController alloc] init];
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:dVC];
+        dVC.uesrName = _userName;
+        [self presentModalViewController:nvc animated:YES];
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:alertAC];
+        [self presentViewController:alert animated:YES completion:nil];
+    
+    }
+    
 }
+
+
+//获取登录的用户名
+- (NSString *)setLoginStatus{
+    Wilddog *userID = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+    [userID observeAuthEventWithBlock:^(WAuthData * _Nonnull authData) {
+        
+        Wilddog *userName = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/users"];
+        
+        Wilddog *newName = [userName childByAppendingPath:authData.uid];
+        
+        [newName observeEventType:WEventTypeValue withBlock:^(WDataSnapshot * _Nonnull snapshot) {
+            _userName = snapshot.value[@"userName"];
+        } withCancelBlock:^(NSError * _Nonnull error) {
+            if (error) {
+                NSLog(@"读取用户数据失败");
+            }
+        }];
+        
+        
+    }];
+    
+    return _userName;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

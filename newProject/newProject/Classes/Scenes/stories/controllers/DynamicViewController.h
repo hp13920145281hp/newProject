@@ -10,4 +10,7 @@
 
 @interface DynamicViewController : UIViewController
 
+//传值
+@property (copy, nonatomic)NSString *uesrName;
+
 @end

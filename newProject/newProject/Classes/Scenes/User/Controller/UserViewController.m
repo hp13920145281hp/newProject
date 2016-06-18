@@ -51,19 +51,7 @@
     
     //注册
     [self.actionTableView registerNib:[UINib nibWithNibName:@"ActionTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
-    __weak typeof(self) weakSelf = self;
-    [myRootRef observeAuthEventWithBlock:^(WAuthData *authData) {
-        if (authData) {
-            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
-            _userID = authData.uid;
-            NSLog(@"%@", authData.uid);
-            
-        } else {
-            
-            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
-        }
-    }];
+
     
     
    
@@ -72,12 +60,43 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang.wilddogio.com/users/%@", _userID]];
-    [ref observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
-        NSLog(@"%@", snapshot.value);
-    } withCancelBlock:^(NSError *error) {
-        NSLog(@"%@", error.description);
+    [self setLoginView];
+}
+
+//设置登录后显示内容
+- (void)setLoginView{
+    //判断登录的用户ID
+    Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+    __weak typeof(self) weakSelf = self;
+    [myRootRef observeAuthEventWithBlock:^(WAuthData *authData) {
+        if (authData) {
+            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
+            
+            //显示登录用户的信息
+            Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang.wilddogio.com/users/%@", authData.uid]];
+            [ref observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
+                if (snapshot.value) {
+                    NSData *data = [[NSData alloc] initWithBase64Encoding:snapshot.value[@"headerImg"]];
+                    _userImgView.image = [UIImage imageWithData:data];
+                    _userNameLabel.text = snapshot.value[@"userName"];
+                }
+                
+                
+                
+            } withCancelBlock:^(NSError *error) {
+                NSLog(@"%@", error.description);
+            }];
+            
+            
+            NSLog(@"%@", authData.uid);
+            
+        } else {
+            
+            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
+        }
     }];
+    
+
 }
 
 
@@ -95,6 +114,9 @@
     UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
         [myRootRef unauth];
+        _userNameLabel.text = @"未登录";
+        _userSignLabel.text = @"";
+        _userImgView.image = [UIImage imageNamed:@"DefaultAvatar"];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [alert addAction:alertAC];
@@ -114,7 +136,7 @@
         //清除缓存
         [cell.celljiaoImg removeFromSuperview];
         [cell.cellSwitch removeFromSuperview];
-        cell.cellLabel.text = [NSString stringWithFormat:@"%lfM",[self folderSizeAtPath:[self getCachesPath]]];
+        cell.cellLabel.text = [NSString stringWithFormat:@"%.2lfM",[self folderSizeAtPath:[self getCachesPath]]];
     }else if (indexPath.row == 3) {
         //夜间模式
         [cell.celljiaoImg removeFromSuperview];
@@ -125,6 +147,8 @@
         [cell.cellSwitch removeFromSuperview];
         cell.celljiaoImg.image = [UIImage imageNamed:@"下一页"];
     }
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+    cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     return cell;
 }
 //获取缓存文件路径
@@ -225,6 +249,11 @@
     [[SDImageCache sharedImageCache] cleanDisk];
     
 }
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

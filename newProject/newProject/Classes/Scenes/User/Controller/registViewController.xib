@@ -43,7 +43,7 @@
                         <constraint firstAttribute="height" constant="30" id="nwX-fe-OhL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="密码2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xyq-Bc-8ee">
                     <rect key="frame" x="45" y="324" width="30" height="30"/>
@@ -100,7 +100,7 @@
                         <action selector="registAction:" destination="-1" eventType="touchUpInside" id="OOv-f6-Zcx"/>
                     </connections>
                 </button>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="屏幕快照 2016-06-14 下午4.44.55.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-iJ-vdH">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultAvatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-iJ-vdH">
                     <rect key="frame" x="132" y="80" width="150" height="150"/>
                     <gestureRecognizers/>
                     <constraints>
@@ -158,9 +158,9 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="DefaultAvatar.png" width="70" height="70"/>
         <image name="a0146d086e061d95e1a708c179f40ad163d9ca7f.jpg" width="480" height="800"/>
         <image name="密码2.png" width="32" height="32"/>
-        <image name="屏幕快照 2016-06-14 下午4.44.55.png" width="1572" height="852"/>
         <image name="用户2.png" width="32" height="32"/>
     </resources>
 </document>
