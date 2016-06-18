@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -67,26 +67,23 @@
                         <constraint firstAttribute="height" constant="2" id="9VA-O3-7qg"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Grs-ob-SOW">
-                    <rect key="frame" x="0.0" y="277" width="414" height="264"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Grs-ob-SOW">
+                    <rect key="frame" x="0.0" y="277" width="414" height="459"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="264" id="9wB-7d-FuO"/>
-                    </constraints>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Grs-ob-SOW" firstAttribute="top" secondItem="iBm-KA-wfN" secondAttribute="bottom" id="23p-Qe-0qR"/>
+                <constraint firstAttribute="bottom" secondItem="Grs-ob-SOW" secondAttribute="bottom" id="0EY-9h-rFV"/>
                 <constraint firstItem="iBm-KA-wfN" firstAttribute="top" secondItem="jgE-Ia-9Cz" secondAttribute="bottom" constant="25" id="3LN-Yx-dqk"/>
-                <constraint firstAttribute="trailing" secondItem="Grs-ob-SOW" secondAttribute="trailing" id="3v6-L7-g4D"/>
                 <constraint firstItem="cFJ-qw-H0F" firstAttribute="leading" secondItem="lbs-fq-COd" secondAttribute="trailing" constant="35" id="4R0-hS-2V7"/>
+                <constraint firstItem="Grs-ob-SOW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4hX-qK-wNy"/>
+                <constraint firstItem="Grs-ob-SOW" firstAttribute="top" secondItem="iBm-KA-wfN" secondAttribute="bottom" id="GfG-5M-3pQ"/>
                 <constraint firstItem="iBm-KA-wfN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="GlE-kg-Inn"/>
                 <constraint firstItem="RHS-TQ-BHZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Htk-zG-6xh"/>
                 <constraint firstAttribute="bottom" secondItem="RHS-TQ-BHZ" secondAttribute="bottom" id="JIg-bu-GoW"/>
                 <constraint firstItem="jgE-Ia-9Cz" firstAttribute="leading" secondItem="lbs-fq-COd" secondAttribute="trailing" constant="35" id="RpW-KU-HaD"/>
                 <constraint firstItem="lbs-fq-COd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="TPs-FA-6Xb"/>
-                <constraint firstItem="Grs-ob-SOW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VRW-wp-Dgs"/>
                 <constraint firstAttribute="trailing" secondItem="kxu-ij-a58" secondAttribute="trailing" constant="48" id="VUm-xC-m2p"/>
                 <constraint firstItem="kxu-ij-a58" firstAttribute="top" secondItem="cFJ-qw-H0F" secondAttribute="bottom" constant="34" id="X05-UQ-AXJ"/>
                 <constraint firstItem="kxu-ij-a58" firstAttribute="leading" secondItem="lbs-fq-COd" secondAttribute="trailing" constant="35" id="dWP-Fb-EeS"/>
@@ -98,6 +95,7 @@
                 <constraint firstItem="RHS-TQ-BHZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="q8U-HT-cUq"/>
                 <constraint firstAttribute="trailing" secondItem="cFJ-qw-H0F" secondAttribute="trailing" constant="85" id="rtM-e4-NFd"/>
                 <constraint firstAttribute="trailing" secondItem="RHS-TQ-BHZ" secondAttribute="trailing" id="vFe-e3-bYz"/>
+                <constraint firstAttribute="trailing" secondItem="Grs-ob-SOW" secondAttribute="trailing" id="xPh-TJ-QG8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <point key="canvasLocation" x="236" y="325"/>

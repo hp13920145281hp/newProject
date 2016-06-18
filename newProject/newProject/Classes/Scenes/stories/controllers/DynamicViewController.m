@@ -12,6 +12,7 @@
 #import <TZImagePickerController.h>
 #import "AppDelegate.h"
 #import <FMDB.h>
+#import <BaiduMapAPI_Radar/BMKRadarManager.h>
 
 @interface DynamicViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, TZImagePickerControllerDelegate>
 //动态输入框
@@ -40,6 +41,7 @@
     //设置collectionView
     [self setCollectionView];
     [self setTextView];
+    
 }
 
 
@@ -58,6 +60,11 @@
     
 }
 
+//发布
+- (void)saveAC{
+    
+
+}
 
 
 //返回
