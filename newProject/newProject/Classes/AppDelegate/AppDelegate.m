@@ -11,7 +11,8 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <FMDB.h>
 #import "UserLocationManager.h"
-#import <EaseMob.h>
+#import <UMSocialSinaSSOHandler.h>
+#import <UMSocial.h>
 
 @interface AppDelegate ()
 //地图管理对象
@@ -35,13 +36,28 @@
     //地图相关
     [self baiduMap];
     
-
-    [[EaseMob sharedInstance] registerSDKWithAppKey:@"boon#easyboon" apnsCertName:@"istore_dev"];
-    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    //设置友盟相关
+    [self setUm];
     
     return YES;
 }
+- (void)setUm{
+    //设置友盟的APPKEY
+    [UMSocialData setAppKey:@"5764fd72e0f55a2bf00030e5"];
+    
+    //设置新浪微博相关内容
+    //把在新浪微博注册的应用的 APPKEY, redirectURL 替换为下面的参数,并且在 INFO 中添加对应的 wb+APPKEY
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954" secret:@"04b48b094faeb16683c32669824ebdad" RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+}
 
+//系统回调方法
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    if (result == false) {
+        //做其他操作,或者调用其他 SDK
+    }
+    return result;
+}
 
 static AppDelegate *appdelegate = nil;
 //实现单例方法

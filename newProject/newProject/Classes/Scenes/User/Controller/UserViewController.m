@@ -11,7 +11,6 @@
 #import "registViewController.h"
 #import "ActionTableViewCell.h"
 #import <UIImageView+WebCache.h>
-#import <EaseMob.h>
 #import <Wilddog.h>
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>

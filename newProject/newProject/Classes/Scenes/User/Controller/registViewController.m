@@ -7,7 +7,6 @@
 //
 
 #import "registViewController.h"
-#import <EaseMob.h>
 #import <Wilddog.h>
 
 @interface registViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>

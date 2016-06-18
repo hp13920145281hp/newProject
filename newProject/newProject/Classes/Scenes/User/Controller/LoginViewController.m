@@ -10,7 +10,6 @@
 #import "registViewController.h"
 #import <AFNetworking.h>
 #import "User.h"
-#import <EaseMob.h>
 #import <Wilddog.h>
 @interface LoginViewController ()
 //登录账号

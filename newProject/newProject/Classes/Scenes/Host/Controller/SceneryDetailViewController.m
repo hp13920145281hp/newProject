@@ -9,8 +9,10 @@
 #import "SceneryDetailViewController.h"
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
-
-@interface SceneryDetailViewController ()<UIScrollViewDelegate>
+#import <UMSocial.h>
+#import <UMSocialSnsService.h>
+//appkey      5764fd72e0f55a2bf00030e5
+@interface SceneryDetailViewController ()<UIScrollViewDelegate,UMSocialUIDelegate>
 
 //中间的ScrollView
 @property (nonatomic, strong)UIImageView *imageView;
@@ -31,6 +33,10 @@
 - (void)viewDidLoad {
     self.title = @"景点详情";
     
+    //添加分享按钮
+    UIBarButtonItem *shareBtn = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:(UIBarButtonItemStylePlain) target:self action:@selector(shareAC:)];
+    self.navigationItem.rightBarButtonItem = shareBtn;
+    
     //视图上先加上一个视图,防止加上的滚动视图上下摆动
     UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     [self.view addSubview:view1];
@@ -41,6 +47,13 @@
     [self requestData];
     [self descriptionsview];
 }
+
+//分享按钮点击事件
+- (void)shareAC:(UIBarButtonItem *)shareBto{
+    //如果分享需要回调,那么就必须把 delegate 设置为 self,并实现系统回调方法
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"5764fd72e0f55a2bf00030e5" shareText:@"" shareImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_descriptions]]] shareToSnsNames:@[UMShareToSina] delegate:self];
+}
+
 //添加lable,显示详情
 -(void)descriptionsview{
     //详情

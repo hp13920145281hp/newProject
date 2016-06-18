@@ -151,10 +151,8 @@ static NSString *indexPathRow = @"0";
         //将第二页的接口网址传过去
         cityDetailVC.urlStr = [NSString stringWithFormat:kCityDetailUrl,model.scenicId];
         cityDetailVC.navigationItem.title = model.scenicName;
-        
         [self.navigationController pushViewController:cityDetailVC animated:YES];
    }
-
 }
 
 
