@@ -11,7 +11,7 @@
 #import <AFNetworking.h>
 #import "User.h"
 #import <EaseMob.h>
-
+#import <Wilddog.h>
 @interface LoginViewController ()
 //登录账号
 @property (weak, nonatomic) IBOutlet UITextField *loginNameLabel;
@@ -42,16 +42,19 @@
         alert.message = @"用户名或者密码不能为空";
         [weakSelf presentViewController:alert animated:YES completion:nil];
     }else{
-        BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
-        if (!isAutoLogin) {
-            [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.loginNameLabel.text password:self.loginPasswordLabel.text completion:^(NSDictionary *loginInfo, EMError *error) {
-                if (!error && loginInfo) {
-                    NSLog(@"登录成功");
-                    self.block(YES);
-                    [self.navigationController popViewControllerAnimated:YES];
-                }
-            } onQueue:nil];
-        }        
+        Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        [myRootRef authUser:_loginNameLabel.text password:_loginPasswordLabel.text
+        withCompletionBlock:^(NSError *error, WAuthData *authData) {
+            
+      if (error) {
+          // 登录时发生错误
+          NSLog(@"登录失败%@",error);
+      } else {
+          // 登录成功，返回authData数据
+          NSLog(@"登录成功");
+          [self.navigationController popViewControllerAnimated:YES];
+      }
+  }];
     }
 }
 //跳转至注册页面
