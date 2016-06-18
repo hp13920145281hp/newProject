@@ -16,36 +16,37 @@
 }
 
 - (void)setModel:(StoriesModel *)model{
-    self.userName.text = model.name;
+    self.userName.text = model.userName;
     self.dynamicLabel.text = model.text;
+    self.headerImg.image = model.header;
     switch (model.photoArr.count) {
         case 1:
-            self.firstImg = model.photoArr[0];
+            self.firstImg.image = model.photoArr[0];
             break;
         case 2:
-            self.firstImg = model.photoArr[0];
-            self.secondImg = model.photoArr[1];
+            self.firstImg.image = model.photoArr[0];
+            self.secondImg.image = model.photoArr[1];
             break;
         case 3:
-            self.firstImg = model.photoArr[0];
-            self.secondImg = model.photoArr[1];
-            self.thirdImg = model.photoArr[2];
+            self.firstImg.image = model.photoArr[0];
+            self.secondImg.image = model.photoArr[1];
+            self.thirdImg.image = model.photoArr[2];
             break;
         case 4:
-            self.firstImg = model.photoArr[0];
-            self.secondImg = model.photoArr[1];
-            self.thirdImg = model.photoArr[2];
-            self.fourthImg = model.photoArr[3];
+            self.firstImg.image = model.photoArr[0];
+            self.secondImg.image = model.photoArr[1];
+            self.thirdImg.image = model.photoArr[2];
+            self.fourthImg.image = model.photoArr[3];
             break;
         default:
             break;
     }
-
 }
 
 - (void)layoutSubviews{
-    _view.layer.cornerRadius = 5;
-    _view.layer.masksToBounds = YES;
+    
+    _headerImg.layer.masksToBounds = YES;
+    _headerImg.layer.cornerRadius = 5;
 
 }
 

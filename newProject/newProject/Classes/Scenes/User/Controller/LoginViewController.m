@@ -52,6 +52,7 @@
       } else {
           // 登录成功，返回authData数据
           NSLog(@"登录成功");
+          [[NSUserDefaults standardUserDefaults] setValue:authData.uid forKey:@"userName"];
           [self.navigationController popViewControllerAnimated:YES];
       }
   }];

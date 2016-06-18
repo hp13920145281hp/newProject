@@ -20,6 +20,9 @@
 
 //记录登录的用户名
 @property (copy, nonatomic)NSString *userName;
+//记录用户头像
+@property (copy, nonatomic)NSString *headerImg;
+
 
 @end
 
@@ -51,16 +54,42 @@
     [img setImage:[UIImage imageNamed:@"背景.jpg"]];
     img.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:img];
+    
+    _dataArr = [NSMutableArray array];
+    [self getLoginStatus];
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self getStories];
+}
+
+//获取动态
+- (void)getStories{
+    Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/stories"];
+    [storiesWilddog observeEventType:WEventTypeChildAdded withBlock:^(WDataSnapshot * _Nonnull snapshot) {
+        StoriesModel *model = [[StoriesModel alloc] init];
+        [model setValuesForKeysWithDictionary:snapshot.value];
+        [_dataArr addObject:model];
+        [self.tableView reloadData];
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        if (error) {
+            NSLog(@"获取动态失败");
+        }
+    }];
+    
+}
+
 
 //动态
 - (void)dynamicAC{
 //    NSLog(@"发布");
     //跳转到动态发表界面
-    if (_userName) {
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]) {
         DynamicViewController *dVC = [[DynamicViewController alloc] init];
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:dVC];
         dVC.uesrName = _userName;
+        dVC.headerImg = _headerImg;
         [self presentModalViewController:nvc animated:YES];
     }else{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未登录" preferredStyle:UIAlertControllerStyleAlert];
@@ -73,27 +102,21 @@
 }
 
 
-//获取登录的用户名
-- (NSString *)setLoginStatus{
-    Wilddog *userID = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
-    [userID observeAuthEventWithBlock:^(WAuthData * _Nonnull authData) {
-        
+//获取登录的用户名和头像
+- (void)getLoginStatus{
         Wilddog *userName = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/users"];
         
-        Wilddog *newName = [userName childByAppendingPath:authData.uid];
+        Wilddog *newName = [userName childByAppendingPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]];
         
         [newName observeEventType:WEventTypeValue withBlock:^(WDataSnapshot * _Nonnull snapshot) {
             _userName = snapshot.value[@"userName"];
+            _headerImg = snapshot.value[@"headerImg"];
         } withCancelBlock:^(NSError * _Nonnull error) {
             if (error) {
                 NSLog(@"读取用户数据失败");
             }
         }];
-        
-        
-    }];
-    
-    return _userName;
+
 }
 
 
@@ -110,8 +133,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.dataArr.count;
+    return _dataArr.count;
 }
 
 
@@ -120,7 +142,7 @@
     //设置cell选中时背景颜色
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.297];
-    cell.model = self.dataArr[indexPath.row];
+    cell.model = self.dataArr[self.dataArr.count - 1 - indexPath.row];
     return cell;
 }
 

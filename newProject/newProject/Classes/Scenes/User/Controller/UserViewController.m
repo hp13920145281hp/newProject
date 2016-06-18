@@ -66,38 +66,27 @@
 
 //设置登录后显示内容
 - (void)setLoginView{
-    //判断登录的用户ID
-    Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
-    __weak typeof(self) weakSelf = self;
-    [myRootRef observeAuthEventWithBlock:^(WAuthData *authData) {
-        if (authData) {
-            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
-            
-            //显示登录用户的信息
-            Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang.wilddogio.com/users/%@", authData.uid]];
-            [ref observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
-                if (snapshot.value) {
-                    NSData *data = [[NSData alloc] initWithBase64Encoding:snapshot.value[@"headerImg"]];
-                    _userImgView.image = [UIImage imageWithData:data];
-                    _userNameLabel.text = snapshot.value[@"userName"];
-                }
-                
-                
-                
-            } withCancelBlock:^(NSError *error) {
-                NSLog(@"%@", error.description);
-            }];
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]) {
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
+        
+        //显示登录用户的信息
+        Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang.wilddogio.com/users/%@", [[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]]];
+        [ref observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
+            if (snapshot.value) {
+                NSData *data = [[NSData alloc] initWithBase64Encoding:snapshot.value[@"headerImg"]];
+                _userImgView.image = [UIImage imageWithData:data];
+                _userNameLabel.text = snapshot.value[@"userName"];
+            }
             
             
-            NSLog(@"%@", authData.uid);
-            
+        }];
+         
         } else {
             
-            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
         }
-    }];
     
-
 }
 
 
@@ -114,10 +103,12 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已退出" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"userName"];
         [myRootRef unauth];
         _userNameLabel.text = @"未登录";
         _userSignLabel.text = @"";
         _userImgView.image = [UIImage imageNamed:@"DefaultAvatar"];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [alert addAction:alertAC];
