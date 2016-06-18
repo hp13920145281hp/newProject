@@ -93,6 +93,13 @@
     }
 
 }
+
+//收回键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
 //选择图片手势事件
 - (IBAction)chooseImgAction:(UITapGestureRecognizer *)sender {
     __weak typeof(self) weakSelf = self;
