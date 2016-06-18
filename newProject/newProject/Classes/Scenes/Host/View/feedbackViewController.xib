@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="feedbackViewController">
             <connections>
+                <outlet property="detailLable" destination="KMN-vq-MVd" id="Lso-8o-CZs"/>
+                <outlet property="lianxiLable" destination="ATH-IM-zZM" id="oJ9-eC-e25"/>
+                <outlet property="nameLable" destination="72G-Sl-ky5" id="p8O-Yw-juU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,6 +60,9 @@
                     <rect key="frame" x="120" y="591" width="53" height="30"/>
                     <color key="backgroundColor" red="0.30130055350000001" green="1" blue="0.96919667300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="提交"/>
+                    <connections>
+                        <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="ZqK-uJ-f0m"/>
+                    </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KMN-vq-MVd">
                     <rect key="frame" x="120" y="287" width="274" height="277"/>

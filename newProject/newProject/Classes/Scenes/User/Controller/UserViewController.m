@@ -12,6 +12,7 @@
 #import "ActionTableViewCell.h"
 #import <UIImageView+WebCache.h>
 #import <EaseMob.h>
+#import <Wilddog.h>
 
 @interface UserViewController ()<UITableViewDelegate,UITableViewDataSource>
 //用户头像
@@ -29,6 +30,9 @@
 @property(assign,nonatomic)BOOL isLogin;
 //存放功能按钮数据
 @property(strong,nonatomic)NSArray *array;
+
+//记录登录用户ID
+@property (copy, nonatomic)NSString *userID;
 @end
 
 @implementation UserViewController
@@ -48,40 +52,54 @@
     
     //注册
     [self.actionTableView registerNib:[UINib nibWithNibName:@"ActionTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+    __weak typeof(self) weakSelf = self;
+    [myRootRef observeAuthEventWithBlock:^(WAuthData *authData) {
+        if (authData) {
+            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
+            _userID = authData.uid;
+            NSLog(@"%@", authData.uid);
+            
+        } else {
+            
+            weakSelf.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
+        }
+    }];
+    
+    
+   
+    
+
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang.wilddogio.com/users/%@", _userID]];
+    [ref observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
+        NSLog(@"%@", snapshot.value);
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+}
+
+
 //登录按钮
 - (void)loginAction{
     LoginViewController *loginVC = [[LoginViewController alloc]init];
-    loginVC.block = ^(BOOL isLogin){
-        self.isLogin = isLogin;
-    };
     [self.navigationController pushViewController:loginVC animated:YES];
-    
 }
--(void)viewWillAppear:(BOOL)animated{
-    if (self.isLogin == NO) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
-    }else{
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
-        
-    }
-    NSLog(@"%d",self.isLogin);
-}
-- (void)didLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error{
-    NSLog(@"已经登录");
-}
+
+
+
 //取消登录按钮
 - (void)CancelAction{
-    [[EaseMob sharedInstance].chatManager asyncLogoffWithUnbindDeviceToken:YES completion:^(NSDictionary *info, EMError *error) {
-        if (!(error && info)) {
-            NSLog(@"退出成功");
-            self.isLogin = NO;
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
-        }else{
-            NSLog(@"%@",info);
-            NSLog(@"退出失败");
-        }
-    } onQueue:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已退出" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        [myRootRef unauth];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:alertAC];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 #pragma mark tableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

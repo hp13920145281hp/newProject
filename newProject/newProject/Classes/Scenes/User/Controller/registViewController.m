@@ -8,6 +8,7 @@
 
 #import "registViewController.h"
 #import <EaseMob.h>
+#import <Wilddog.h>
 
 @interface registViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *registNameTF;
@@ -52,14 +53,7 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         //判断是否注册成功
         if ([alert.message isEqualToString:@"注册成功"]) {
-            //如果注册成功,就隐藏弹框
-            [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.registNameTF.text password:self.registPasswordTF.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
-                if (!error) {
-                    NSLog(@"注册成功");
-                }
-            } onQueue:nil];
-
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     }];
     [alert addAction:action];
@@ -78,7 +72,24 @@
         alert.message = @"两次输入的密码不相同";
         [self presentViewController:alert animated:YES completion:nil];
     }else{
-        
+        Wilddog *registWilddog  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        [registWilddog createUser:_registNameTF.text password:_registPasswordTF.text withValueCompletionBlock:^(NSError * _Nullable error, NSDictionary * _Nonnull result) {
+            if (!error) {
+                alert.message = @"注册成功";
+                Wilddog *usersWilddog  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/users"];
+                NSData *data = UIImageJPEGRepresentation(_registUserImg.image, 0.2);
+                NSString *str = [data base64Encoding];
+                NSDictionary *userInfo = @{
+                                           @"headerImg": str,
+                                           @"userName": _registNameTF.text,
+                                           };
+                Wilddog *newWilddog = [usersWilddog childByAppendingPath:result[@"uid"]];
+                [newWilddog setValue:userInfo];
+                [self presentViewController:alert animated:YES completion:nil];
+            }else{
+                NSLog(@"注册失败%@", error);
+            }
+        }];
     }
 
 }
