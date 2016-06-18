@@ -17,6 +17,7 @@
 #import "StoriesTableViewController.h"
 #import "destinationViewController.h"
 #import "SceneryDetailViewController.h"
+#import <AFNetworking.h>
 
 //滚动图
 #define scrollURL @"http://open.qyer.com/qyer/recommands/entry?app_installtime=1435837675&client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&page=1&track_app_channel=App%2520Store&track_app_version=6.3&track_device_info=iPhone7%2C2&track_deviceid=94600906-5BB7-43E7-9E16-C479A03EE469&track_os=ios%25208.3&v=1"
@@ -68,7 +69,7 @@
     [self page];
    
     [self loadScenData];
-
+    
 }
 
 #pragma mark ----------------------轮播图数据
@@ -234,13 +235,14 @@
 #pragma mark ----------------------点击进入详情页,并且将详情页接口传过去
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SceneryDetailViewController *scenceryDetailVC = [[SceneryDetailViewController alloc]init];
-    SceneryModel *model = [SceneryModel new];
+    SceneryModel *model = self.sceneryArray[indexPath.row];
     if (_seg.selectedSegmentIndex == 0) {
         if (self.sceneryArray.count == 0) {
             return;
         }
         //拼接详情页面的接口地址
         scenceryDetailVC.detailUrl = [NSString stringWithFormat:kFJDetailUrl,model.id];
+        NSLog(@"%@",model.id);
     }else{
         scenceryDetailVC.detailUrl = [NSString stringWithFormat:kFJDetailUrl,model.id];
     }

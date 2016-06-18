@@ -49,6 +49,7 @@
     
     if (_block) {
         _block(sender.titleLabel.text);
+        NSLog(@"%@",sender.titleLabel.text);
     }
    
 

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19FD1F61D14134E00640D4B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */; };
+		D19FD2001D141BA200640D4B /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1FE1D141BA200640D4B /* NavigationViewController.m */; };
+		D19FD2011D141BA200640D4B /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19FD1FF1D141BA200640D4B /* NavigationViewController.xib */; };
+		D19FD2061D141C5800640D4B /* PathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD2041D141C5800640D4B /* PathViewController.m */; };
+		D19FD2071D141C5800640D4B /* PathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19FD2051D141C5800640D4B /* PathViewController.xib */; };
+		D19FD20C1D141CB200640D4B /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD20A1D141CB200640D4B /* LocationViewController.m */; };
+		D19FD20D1D141CB200640D4B /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19FD20B1D141CB200640D4B /* LocationViewController.xib */; };
 		D6759D6E1D13874900EE5743 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759D6D1D13874900EE5743 /* main.m */; };
 		D6759D741D13874900EE5743 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759D731D13874900EE5743 /* ViewController.m */; };
 		D6759D771D13874900EE5743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6759D751D13874900EE5743 /* Main.storyboard */; };
@@ -126,6 +133,17 @@
 		13D49E79225E4C28AA882498 /* Pods-newProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newProject/Pods-newProject.debug.xcconfig"; sourceTree = "<group>"; };
 		2828988210866BDBCD7CCAAC /* libPods-newProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEE2EC124AD750F856F4931 /* Pods-newProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-newProject/Pods-newProject.release.xcconfig"; sourceTree = "<group>"; };
+		D19FD1F41D14134E00640D4B /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		D19FD1FD1D141BA200640D4B /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		D19FD1FE1D141BA200640D4B /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		D19FD1FF1D141BA200640D4B /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
+		D19FD2031D141C5800640D4B /* PathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathViewController.h; sourceTree = "<group>"; };
+		D19FD2041D141C5800640D4B /* PathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathViewController.m; sourceTree = "<group>"; };
+		D19FD2051D141C5800640D4B /* PathViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathViewController.xib; sourceTree = "<group>"; };
+		D19FD2091D141CB200640D4B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		D19FD20A1D141CB200640D4B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		D19FD20B1D141CB200640D4B /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		D6759D691D13874900EE5743 /* newProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6759D6D1D13874900EE5743 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6759D721D13874900EE5743 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -293,6 +311,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D19FD1FC1D141B8C00640D4B /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D19FD1FD1D141BA200640D4B /* NavigationViewController.h */,
+				D19FD1FE1D141BA200640D4B /* NavigationViewController.m */,
+				D19FD1FF1D141BA200640D4B /* NavigationViewController.xib */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		D19FD2021D141C4A00640D4B /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				D19FD2031D141C5800640D4B /* PathViewController.h */,
+				D19FD2041D141C5800640D4B /* PathViewController.m */,
+				D19FD2051D141C5800640D4B /* PathViewController.xib */,
+			);
+			path = Path;
+			sourceTree = "<group>";
+		};
+		D19FD2081D141CA500640D4B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				D19FD2091D141CB200640D4B /* LocationViewController.h */,
+				D19FD20A1D141CB200640D4B /* LocationViewController.m */,
+				D19FD20B1D141CB200640D4B /* LocationViewController.xib */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		D6759D601D13874900EE5743 = {
 			isa = PBXGroup;
 			children = (
@@ -513,11 +561,13 @@
 		D6759DE41D138AA400EE5743 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D19FD2081D141CA500640D4B /* Location */,
+				D19FD2021D141C4A00640D4B /* Path */,
+				D19FD1FC1D141B8C00640D4B /* Navigation */,
 				D6759DE51D138AA400EE5743 /* Address */,
 				D6759DE81D138AA400EE5743 /* MapViewController.h */,
 				D6759DE91D138AA400EE5743 /* MapViewController.m */,
 				D6759DEA1D138AA400EE5743 /* MapViewController.xib */,
-				D6759DEB1D138AA400EE5743 /* Navigation */,
 				D6759DEC1D138AA400EE5743 /* Nearby */,
 			);
 			path = Controller;
@@ -530,13 +580,6 @@
 				D6759DE71D138AA400EE5743 /* AddressViewController.m */,
 			);
 			path = Address;
-			sourceTree = "<group>";
-		};
-		D6759DEB1D138AA400EE5743 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		D6759DEC1D138AA400EE5743 /* Nearby */ = {
@@ -571,6 +614,8 @@
 		D6759DFD1D138AA400EE5743 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D19FD1F41D14134E00640D4B /* HomeCollectionViewCell.h */,
+				D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */,
 				D6759DFE1D138AA400EE5743 /* LYYSearchBar.h */,
 				D6759DFF1D138AA400EE5743 /* LYYSearchBar.m */,
 				D6759E001D138AA400EE5743 /* SearchListTableViewCell.h */,
@@ -754,15 +799,18 @@
 				D6759E2F1D138AA400EE5743 /* 4.jpg in Resources */,
 				D6759E841D138AA400EE5743 /* StoriesViewCell.xib in Resources */,
 				D6759E461D138AA400EE5743 /* 密码2.png in Resources */,
+				D19FD20D1D141CB200640D4B /* LocationViewController.xib in Resources */,
 				D6759E741D138AA400EE5743 /* navigation.png in Resources */,
 				D6759E8C1D138AA400EE5743 /* UserViewController.xib in Resources */,
 				D6759E761D138AA400EE5743 /* relax.jpg in Resources */,
 				D6759E421D138AA400EE5743 /* 图片.png in Resources */,
+				D19FD2071D141C5800640D4B /* PathViewController.xib in Resources */,
 				D6759E671D138AA400EE5743 /* SceneryCell.xib in Resources */,
 				D6759E7D1D138AA400EE5743 /* SearchTableViewCell.xib in Resources */,
 				D6759E411D138AA400EE5743 /* 向右.png in Resources */,
 				D6759E6B1D138AA400EE5743 /* MapViewController.xib in Resources */,
 				D6759E451D138AA400EE5743 /* 头像.png in Resources */,
+				D19FD2011D141BA200640D4B /* NavigationViewController.xib in Resources */,
 				D6759E391D138AA400EE5743 /* 位置.png in Resources */,
 				D6759E471D138AA400EE5743 /* 屏幕快照 2016-06-14 下午4.44.55.png in Resources */,
 				D6759E561D138AA400EE5743 /* SceneryDetailViewController.xib in Resources */,
@@ -873,12 +921,15 @@
 			files = (
 				D6759E8D1D138AA400EE5743 /* User.m in Sources */,
 				D6759E871D138AA400EE5743 /* LoginViewController.m in Sources */,
+				D19FD2001D141BA200640D4B /* NavigationViewController.m in Sources */,
+				D19FD20C1D141CB200640D4B /* LocationViewController.m in Sources */,
 				D6759E281D138AA400EE5743 /* CustomTabBar.m in Sources */,
 				D6759D741D13874900EE5743 /* ViewController.m in Sources */,
 				D6759D6E1D13874900EE5743 /* main.m in Sources */,
 				D6759E271D138AA400EE5743 /* AppDelegate.m in Sources */,
 				D6759E6E1D138AA400EE5743 /* SearchViewController.m in Sources */,
 				D6759E891D138AA400EE5743 /* registViewController.m in Sources */,
+				D19FD2061D141C5800640D4B /* PathViewController.m in Sources */,
 				D6759E291D138AA400EE5743 /* RootViewController.m in Sources */,
 				D6759E2A1D138AA400EE5743 /* SendButton.m in Sources */,
 				D6759E531D138AA400EE5743 /* HostViewController.m in Sources */,
@@ -899,6 +950,7 @@
 				D6759E8B1D138AA400EE5743 /* UserViewController.m in Sources */,
 				D6759E7E1D138AA400EE5743 /* UserLocationManager.m in Sources */,
 				D6759E5A1D138AA400EE5743 /* SceneryModel.m in Sources */,
+				D19FD1F61D14134E00640D4B /* HomeCollectionViewCell.m in Sources */,
 				D6759E7F1D138AA400EE5743 /* DynamicViewController.m in Sources */,
 				D6759E581D138AA400EE5743 /* CityHotSeneryModel.m in Sources */,
 				D6759E791D138AA400EE5743 /* LYYSearchBar.m in Sources */,
