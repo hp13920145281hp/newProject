@@ -18,6 +18,7 @@
 #import "destinationViewController.h"
 #import "SceneryDetailViewController.h"
 #import <AFNetworking.h>
+#import "CityListTableViewController.h"
 
 //滚动图
 #define scrollURL @"http://open.qyer.com/qyer/recommands/entry?app_installtime=1435837675&client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&page=1&track_app_channel=App%2520Store&track_app_version=6.3&track_device_info=iPhone7%2C2&track_deviceid=94600906-5BB7-43E7-9E16-C479A03EE469&track_os=ios%25208.3&v=1"
@@ -53,6 +54,9 @@
 @property (nonatomic, assign)int currentPage1,currentPage2;
 
 @property (nonatomic, strong)NSArray *arr;
+//全国按钮
+@property (nonatomic, strong)UIButton *titleButton;
+
 @end
 
 @implementation HostViewController
@@ -252,14 +256,15 @@
 #pragma mark =-----------------------------导航栏搜索框和按钮
 -(void)navgationAction{
     //添加导航栏按钮
-    UIButton *titleButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [titleButton setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+    self.titleButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_titleButton setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     //位置和尺寸
-    titleButton.frame = CGRectMake(0, 0,100, 40);
-    [titleButton setTitle:@"全国" forState:UIControlStateNormal];
+    _titleButton.frame = CGRectMake(0, 0,100, 40);
+    [_titleButton setTitle:@"全国" forState:UIControlStateNormal];
+    [_titleButton addTarget:self action:@selector(clickButton) forControlEvents:(UIControlEventTouchUpInside)];
     //图标
-    [titleButton setImage:[UIImage imageNamed:@"全国按钮"] forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:titleButton];
+    [_titleButton setImage:[UIImage imageNamed:@"全国按钮"] forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_titleButton];
     //添加搜索框
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 35)];
     UISearchBar *searchBar = [[UISearchBar alloc] init];
@@ -269,6 +274,17 @@
     [titleView addSubview:searchBar];
     self.navigationItem.titleView = titleView;
 }
+#pragma mark 点击全国按钮进入全国位置选择界面
+-(void)clickButton{
+    CityListTableViewController *cityListVC = [[CityListTableViewController alloc]init];
+    __block typeof(self) weakSelf = self;
+    cityListVC.block = ^(NSString *str){
+        [weakSelf.titleButton setTitle:str forState:(UIControlStateNormal)];
+    };
+    [self.navigationController pushViewController:cityListVC animated:YES];
+}
+
+
 //目的地
 - (IBAction)destinationAction:(UIButton *)sender {
     destinationViewController *destinationVC = [[destinationViewController alloc]init];

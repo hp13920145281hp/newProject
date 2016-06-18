@@ -126,6 +126,8 @@
 		D68BE2F01D13946F00266260 /* iconfont-fuwuxiangqing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */; };
 		D68BE2F11D13946F00266260 /* iconfont-shijian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */; };
 		D68BE2F21D13946F00266260 /* sanjiaoyou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */; };
+		D6BBDE6C1D14DC97006DC13B /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BBDE6B1D14DC97006DC13B /* citydict.plist */; };
+		D6BBDE6F1D14E155006DC13B /* CityListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BBDE6E1D14E155006DC13B /* CityListTableViewController.m */; };
 		E42AB131DA8D9871C2CAD30E /* libPods-newProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828988210866BDBCD7CCAAC /* libPods-newProject.a */; };
 /* End PBXBuildFile section */
 
@@ -297,6 +299,9 @@
 		D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-fuwuxiangqing@2x.png"; sourceTree = "<group>"; };
 		D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-shijian@2x.png"; sourceTree = "<group>"; };
 		D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sanjiaoyou@2x.png"; sourceTree = "<group>"; };
+		D6BBDE6B1D14DC97006DC13B /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		D6BBDE6D1D14E155006DC13B /* CityListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityListTableViewController.h; sourceTree = "<group>"; };
+		D6BBDE6E1D14E155006DC13B /* CityListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +486,7 @@
 		D6759DB81D138AA400EE5743 /* Host */ = {
 			isa = PBXGroup;
 			children = (
+				D6BBDE6B1D14DC97006DC13B /* citydict.plist */,
 				D6759DB91D138AA400EE5743 /* Controller */,
 				D6759DC31D138AA400EE5743 /* Model */,
 				D6759DCE1D138AA400EE5743 /* View */,
@@ -500,6 +506,8 @@
 				D6759DC01D138AA400EE5743 /* SceneryDetailViewController.h */,
 				D6759DC11D138AA400EE5743 /* SceneryDetailViewController.m */,
 				D6759DC21D138AA400EE5743 /* SceneryDetailViewController.xib */,
+				D6BBDE6D1D14E155006DC13B /* CityListTableViewController.h */,
+				D6BBDE6E1D14E155006DC13B /* CityListTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -787,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6759E4D1D138AA400EE5743 /* 目的地.png in Resources */,
+				D6BBDE6C1D14DC97006DC13B /* citydict.plist in Resources */,
 				D6759E301D138AA400EE5743 /* a0146d086e061d95e1a708c179f40ad163d9ca7f.jpg in Resources */,
 				D68BE2F11D13946F00266260 /* iconfont-shijian@2x.png in Resources */,
 				D6759E8A1D138AA400EE5743 /* registViewController.xib in Resources */,
@@ -959,6 +968,7 @@
 				D6759E6C1D138AA400EE5743 /* SearchListViewController.m in Sources */,
 				D6759E6A1D138AA400EE5743 /* MapViewController.m in Sources */,
 				D6759E811D138AA400EE5743 /* StoriesTableViewController.m in Sources */,
+				D6BBDE6F1D14E155006DC13B /* CityListTableViewController.m in Sources */,
 				D6759E641D138AA400EE5743 /* feedbackViewController.m in Sources */,
 				D6759E591D138AA400EE5743 /* CityNAmeModel.m in Sources */,
 				D6759E7C1D138AA400EE5743 /* SearchTableViewCell.m in Sources */,
