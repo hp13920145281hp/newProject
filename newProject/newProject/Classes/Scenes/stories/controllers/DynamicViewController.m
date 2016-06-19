@@ -23,7 +23,7 @@
 //照片选择显示
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCV;
 
-//数据数组
+//图片数据数组
 @property (strong, nonatomic)NSMutableArray *dataArr;
 
 //图片选择器
@@ -64,8 +64,23 @@
 
 //发布
 - (void)saveAC{
+    NSMutableArray *muArr = [NSMutableArray array];
+    for (int i = 0; i < _dataArr.count; i++) {
+        NSData *data = UIImageJPEGRepresentation(_dataArr[i], 0.5);
+        NSString *str = [data base64Encoding];
+        [muArr addObject:str];
+    }
+    Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/stories"];
+    Wilddog *newWilddog = [storiesWilddog childByAutoId];
+    NSDictionary *dic = [[NSDictionary alloc] init];
+    if (_dataArr.count > 0) {
+        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr};
+    }else{
+        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg};
+    }
     
-
+    [newWilddog setValue:dic];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

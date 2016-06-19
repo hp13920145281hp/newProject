@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface StoriesModel : NSObject
 //用户名
-@property (copy, nonatomic)NSString *name;
+@property (copy, nonatomic)NSString *userName;
 //动态信息
 @property (copy, nonatomic)NSString *text;
-//图片
-@property (strong, nonatomic)NSArray *photoArr;
-
+//图片数组
+@property (strong, nonatomic)NSMutableArray *photoArr;
+//头像
+@property (strong, nonatomic)UIImage *header;
 
 @end

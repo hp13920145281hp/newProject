@@ -10,8 +10,23 @@
 
 @implementation StoriesModel
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
 
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+    if ([key isEqualToString:@"headerImg"]) {
+        NSData *data = [[NSData alloc] initWithBase64Encoding:value];
+        _header = [UIImage imageWithData:data];
+    }
+    if ([key isEqualToString:@"imgs"]){
+        _photoArr = [NSMutableArray array];
+        for (int i = 0; i < [value count]; i++) {
+            NSData *data1 = [[NSData alloc] initWithBase64Encoding:value[i]];
+            UIImage *img = [UIImage imageWithData:data1];
+            [_photoArr addObject:img];
+        }
+    }
 }
+
+
 
 @end
