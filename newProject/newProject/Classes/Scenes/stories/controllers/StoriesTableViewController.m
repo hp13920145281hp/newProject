@@ -37,12 +37,16 @@
     //添加导航栏右侧按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布动态" style:UIBarButtonItemStylePlain target:self action:@selector(dynamicAC)];
     
-    
+    _dataArr = [NSMutableArray array];
+    [self getStories];
     
     
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    //获取登录的账户名
+    [self getLoginStatus];
+}
 
 //tableView设置
 - (void)setTableView{
@@ -60,11 +64,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [self getLoginStatus];
-    _dataArr = [NSMutableArray array];
-    [self getStories];    
-}
 
 //获取动态
 - (void)getStories{
