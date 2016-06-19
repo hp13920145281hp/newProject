@@ -22,15 +22,21 @@
     switch (model.photoArr.count) {
         case 1:
             self.firstImg.image = model.photoArr[0];
+            self.secondImg.image = nil;
+            self.thirdImg.image = nil;
+            self.fourthImg.image = nil;
             break;
         case 2:
             self.firstImg.image = model.photoArr[0];
             self.secondImg.image = model.photoArr[1];
+            self.thirdImg.image = nil;
+            self.fourthImg.image = nil;
             break;
         case 3:
             self.firstImg.image = model.photoArr[0];
             self.secondImg.image = model.photoArr[1];
             self.thirdImg.image = model.photoArr[2];
+            self.fourthImg.image = nil;
             break;
         case 4:
             self.firstImg.image = model.photoArr[0];

@@ -17,8 +17,6 @@
 @interface StoriesTableViewController ()
 //数据数组
 @property (strong, nonatomic)NSMutableArray *dataArr;
-//反向数据数组
-@property (strong, nonatomic)NSArray *muArr;
 
 //记录登录的用户名
 @property (copy, nonatomic)NSString *userName;
@@ -40,9 +38,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布动态" style:UIBarButtonItemStylePlain target:self action:@selector(dynamicAC)];
     
     
-    [self getLoginStatus];
-    _dataArr = [NSMutableArray array];
-    [self getStories];
+    
     
 }
 
@@ -62,14 +58,12 @@
     img.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:img];
     
-    
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-   
-    
+    [self getLoginStatus];
+    _dataArr = [NSMutableArray array];
+    [self getStories];    
 }
 
 //获取动态
@@ -82,7 +76,6 @@
         [self.tableView reloadData];
         
     } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"=======");
         if (error) {
             NSLog(@"获取动态失败");
         }
@@ -143,9 +136,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    _muArr = [self setArray:_dataArr];
-
-    return _muArr.count;
+    return _dataArr.count;
 }
 
 
@@ -154,7 +145,7 @@
     //设置cell选中时背景颜色
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.297];
-    cell.model = self.muArr[indexPath.row];
+    cell.model = self.dataArr[_dataArr.count - 1 - indexPath.row];
     return cell;
 }
 
@@ -163,14 +154,7 @@
 }
 
 
-//颠倒数组
-- (NSArray *)setArray:(NSArray *)array{
-    NSMutableArray *muArr = [NSMutableArray array];
-    for (int i = 0; i < array.count; i++) {
-        [muArr addObject:array[array.count - 1 - i]];
-    }
-    return muArr;
-}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
