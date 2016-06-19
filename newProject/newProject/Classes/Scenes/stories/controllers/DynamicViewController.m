@@ -72,7 +72,13 @@
     }
     Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/stories"];
     Wilddog *newWilddog = [storiesWilddog childByAutoId];
-    NSDictionary *dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr};
+    NSDictionary *dic = [[NSDictionary alloc] init];
+    if (_dataArr.count > 0) {
+        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr};
+    }else{
+        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg};
+    }
+    
     [newWilddog setValue:dic];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

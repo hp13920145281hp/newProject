@@ -11,13 +11,6 @@
 @implementation StoriesModel
 
 
-- (instancetype)init{
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
     if ([key isEqualToString:@"headerImg"]) {

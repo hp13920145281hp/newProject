@@ -17,6 +17,8 @@
 @interface StoriesTableViewController ()
 //数据数组
 @property (strong, nonatomic)NSMutableArray *dataArr;
+//反向数据数组
+@property (strong, nonatomic)NSArray *muArr;
 
 //记录登录的用户名
 @property (copy, nonatomic)NSString *userName;
@@ -37,6 +39,11 @@
     //添加导航栏右侧按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布动态" style:UIBarButtonItemStylePlain target:self action:@selector(dynamicAC)];
     
+    
+    [self getLoginStatus];
+    _dataArr = [NSMutableArray array];
+    [self getStories];
+    
 }
 
 
@@ -55,13 +62,14 @@
     img.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:img];
     
-    _dataArr = [NSMutableArray array];
-    [self getLoginStatus];
+    
+    
+    
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self getStories];
+- (void)viewWillAppear:(BOOL)animated{
+   
+    
 }
 
 //获取动态
@@ -72,7 +80,9 @@
         [model setValuesForKeysWithDictionary:snapshot.value];
         [_dataArr addObject:model];
         [self.tableView reloadData];
+        
     } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"=======");
         if (error) {
             NSLog(@"获取动态失败");
         }
@@ -133,7 +143,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataArr.count;
+    _muArr = [self setArray:_dataArr];
+
+    return _muArr.count;
 }
 
 
@@ -142,12 +154,22 @@
     //设置cell选中时背景颜色
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
     cell.selectedBackgroundView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.297];
-    cell.model = self.dataArr[self.dataArr.count - 1 - indexPath.row];
+    cell.model = self.muArr[indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 200;
+}
+
+
+//颠倒数组
+- (NSArray *)setArray:(NSArray *)array{
+    NSMutableArray *muArr = [NSMutableArray array];
+    for (int i = 0; i < array.count; i++) {
+        [muArr addObject:array[array.count - 1 - i]];
+    }
+    return muArr;
 }
 /*
 // Override to support conditional editing of the table view.
