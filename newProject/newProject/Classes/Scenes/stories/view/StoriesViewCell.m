@@ -19,6 +19,7 @@
     self.userName.text = model.userName;
     self.dynamicLabel.text = model.text;
     self.headerImg.image = model.header;
+    NSLog(@"%ld", model.photoArr.count);
     switch (model.photoArr.count) {
         case 1:
             self.firstImg.image = model.photoArr[0];
@@ -45,6 +46,10 @@
             self.fourthImg.image = model.photoArr[3];
             break;
         default:
+            self.firstImg.image = nil;
+            self.secondImg.image = nil;
+            self.thirdImg.image = nil;
+            self.fourthImg.image = nil;
             break;
     }
 }
