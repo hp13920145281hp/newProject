@@ -17,6 +17,8 @@
 		69557D511D177F4300C57A61 /* 版本更新.png in Resources */ = {isa = PBXBuildFile; fileRef = 69557D4B1D177F4300C57A61 /* 版本更新.png */; };
 		69557D5A1D178E4400C57A61 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69557D581D178E4400C57A61 /* DetailsViewController.m */; };
 		69557D5B1D178E4400C57A61 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69557D591D178E4400C57A61 /* DetailsViewController.xib */; };
+		7E36B5431D17CEC60090921E /* PerfectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */; };
+		7E36B5441D17CEC60090921E /* PerfectInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */; };
 		D19FD1F61D14134E00640D4B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */; };
 		D19FD2001D141BA200640D4B /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1FE1D141BA200640D4B /* NavigationViewController.m */; };
 		D19FD2011D141BA200640D4B /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19FD1FF1D141BA200640D4B /* NavigationViewController.xib */; };
@@ -154,6 +156,9 @@
 		69557D571D178E4400C57A61 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		69557D581D178E4400C57A61 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		69557D591D178E4400C57A61 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		7E36B5401D17CEC60090921E /* PerfectInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfectInformationViewController.h; sourceTree = "<group>"; };
+		7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfectInformationViewController.m; sourceTree = "<group>"; };
+		7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerfectInformationViewController.xib; sourceTree = "<group>"; };
 		BEEE2EC124AD750F856F4931 /* Pods-newProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-newProject/Pods-newProject.release.xcconfig"; sourceTree = "<group>"; };
 		D19FD1F41D14134E00640D4B /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
@@ -725,6 +730,9 @@
 		D6759E171D138AA400EE5743 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7E36B5401D17CEC60090921E /* PerfectInformationViewController.h */,
+				7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */,
+				7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */,
 				69557D3E1D177CBD00C57A61 /* User1ViewController.h */,
 				69557D3F1D177CBD00C57A61 /* User1ViewController.m */,
 				69557D401D177CBD00C57A61 /* User1ViewController.xib */,
@@ -871,6 +879,7 @@
 				D68BE2EF1D13946F00266260 /* iconfont-dingwei@2x.png in Resources */,
 				69557D4E1D177F4300C57A61 /* 完善信息.png in Resources */,
 				D6759E651D138AA400EE5743 /* feedbackViewController.xib in Resources */,
+				7E36B5441D17CEC60090921E /* PerfectInformationViewController.xib in Resources */,
 				D6759E401D138AA400EE5743 /* 发现.png in Resources */,
 				D6759E721D138AA400EE5743 /* hotel.jpg in Resources */,
 				D6759E351D138AA400EE5743 /* 个人 (1).png in Resources */,
@@ -997,6 +1006,7 @@
 				69557D5A1D178E4400C57A61 /* DetailsViewController.m in Sources */,
 				D6759E2C1D138AA400EE5743 /* UIImage+imageContentWithColor.m in Sources */,
 				D6759E661D138AA400EE5743 /* SceneryCell.m in Sources */,
+				7E36B5431D17CEC60090921E /* PerfectInformationViewController.m in Sources */,
 				D6759E5C1D138AA400EE5743 /* CityDetailCell.m in Sources */,
 				D6759E851D138AA400EE5743 /* ActionTableViewCell.m in Sources */,
 				D6759E7E1D138AA400EE5743 /* UserLocationManager.m in Sources */,

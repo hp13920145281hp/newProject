@@ -12,6 +12,7 @@
 #import "ActionTableViewCell.h"
 #import <UIImageView+WebCache.h>
 #import <Wilddog.h>
+#import "PerfectInformationViewController.h"
 
 @interface User1ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -158,15 +159,39 @@
     
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 0:
+            
+            break;
+        case 1:
+        {
+            PerfectInformationViewController *perfectVC = [[PerfectInformationViewController alloc]initWithNibName:@"PerfectInformationViewController" bundle:nil];
+            [self.navigationController pushViewController:perfectVC animated:YES];
+        }
+            break;
+        case 2:
+        {
+            [self clearCache:[self getCachesPath]];
+            NSLog(@"清除");
+        }
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+        default:
+            break;
+    }
+}
 
 //获取缓存文件路径
 -(NSString *)getCachesPath{
     // 获取Caches目录路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *cachesDir = [paths objectAtIndex:0];
-    
-    //    NSString *filePath = [cachesDir stringByAppendingPathComponent:@"com.nickcheng.NCMusicEngine"];
     
     return cachesDir;
 }
@@ -192,7 +217,6 @@
         
         return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
     }
-    
     return 0;
 }
 - (float ) folderSizeAtPath:(NSString*) folderPath{
@@ -210,33 +234,8 @@
     //    NSLog(@"folderSize ==== %lld",folderSize);
     return folderSize/(1024.0*1024.0);
 }
-////////////
--(void)ss{
-    // 获取Caches目录路径
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachesDir = [paths objectAtIndex:0];
-    
-    NSLog(@"cachesDircachesDir == %@",cachesDir);
-    //读取缓存里面的具体单个文件/或全部文件//
-    NSString *filePath = [cachesDir stringByAppendingPathComponent:@"com.nickcheng.NCMusicEngine"];
-    NSArray *array = [[NSArray alloc]initWithContentsOfFile:filePath];
-    NSLog(@"filePathfilePath%@ ==array==== %@",filePath, array);
-    
-    
-    NSFileManager* fm=[NSFileManager defaultManager];
-    if([fm fileExistsAtPath:filePath]){
-        //取得一个目录下得所有文件名
-        NSArray *files = [fm subpathsAtPath:filePath];
-        NSLog(@"files1111111%@ == %ld",files,files.count);
-        
-        // 获得文件名（不带后缀）
-        NSString * exestr = [[files objectAtIndex:1] stringByDeletingPathExtension];
-        NSLog(@"files2222222%@  ==== %@",[files objectAtIndex:1],exestr);
-    }
-}
 - (void)clearCache:(NSString *)path
 {
-    
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
     if ([fileManager fileExistsAtPath:path]) {
@@ -250,9 +249,7 @@
             NSString *absolutePath = [path stringByAppendingPathComponent:fileName];
             
             [fileManager removeItemAtPath:absolutePath error:nil];
-            
         }
-        
     }
     // SDImageCache 自带缓存
     [[SDImageCache sharedImageCache] cleanDisk];
