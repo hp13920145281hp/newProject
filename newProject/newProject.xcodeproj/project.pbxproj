@@ -15,6 +15,8 @@
 		69557D4F1D177F4300C57A61 /* 收藏.png in Resources */ = {isa = PBXBuildFile; fileRef = 69557D491D177F4300C57A61 /* 收藏.png */; };
 		69557D501D177F4300C57A61 /* 清除缓存.png in Resources */ = {isa = PBXBuildFile; fileRef = 69557D4A1D177F4300C57A61 /* 清除缓存.png */; };
 		69557D511D177F4300C57A61 /* 版本更新.png in Resources */ = {isa = PBXBuildFile; fileRef = 69557D4B1D177F4300C57A61 /* 版本更新.png */; };
+		69557D5A1D178E4400C57A61 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69557D581D178E4400C57A61 /* DetailsViewController.m */; };
+		69557D5B1D178E4400C57A61 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69557D591D178E4400C57A61 /* DetailsViewController.xib */; };
 		D19FD1F61D14134E00640D4B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */; };
 		D19FD2001D141BA200640D4B /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1FE1D141BA200640D4B /* NavigationViewController.m */; };
 		D19FD2011D141BA200640D4B /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19FD1FF1D141BA200640D4B /* NavigationViewController.xib */; };
@@ -149,6 +151,9 @@
 		69557D491D177F4300C57A61 /* 收藏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收藏.png"; sourceTree = "<group>"; };
 		69557D4A1D177F4300C57A61 /* 清除缓存.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "清除缓存.png"; sourceTree = "<group>"; };
 		69557D4B1D177F4300C57A61 /* 版本更新.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "版本更新.png"; sourceTree = "<group>"; };
+		69557D571D178E4400C57A61 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		69557D581D178E4400C57A61 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		69557D591D178E4400C57A61 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		BEEE2EC124AD750F856F4931 /* Pods-newProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-newProject/Pods-newProject.release.xcconfig"; sourceTree = "<group>"; };
 		D19FD1F41D14134E00640D4B /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
@@ -682,6 +687,9 @@
 				D6759E0C1D138AA400EE5743 /* DynamicViewController.xib */,
 				D6759E0D1D138AA400EE5743 /* StoriesTableViewController.h */,
 				D6759E0E1D138AA400EE5743 /* StoriesTableViewController.m */,
+				69557D571D178E4400C57A61 /* DetailsViewController.h */,
+				69557D581D178E4400C57A61 /* DetailsViewController.m */,
+				69557D591D178E4400C57A61 /* DetailsViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -890,6 +898,7 @@
 				D6759E4C1D138AA400EE5743 /* 用户2.png in Resources */,
 				D6759E861D138AA400EE5743 /* ActionTableViewCell.xib in Resources */,
 				D6759E3E1D138AA400EE5743 /* 发布 (1).png in Resources */,
+				69557D5B1D178E4400C57A61 /* DetailsViewController.xib in Resources */,
 				D6759E331D138AA400EE5743 /* Unknown.png in Resources */,
 				69557D4D1D177F4300C57A61 /* 夜间模式.png in Resources */,
 				D6759E731D138AA400EE5743 /* life.png in Resources */,
@@ -985,6 +994,7 @@
 				D6759E511D138AA400EE5743 /* destinationViewController.m in Sources */,
 				D6759E681D138AA400EE5743 /* ScrollDetailViewController.m in Sources */,
 				D6759E691D138AA400EE5743 /* AddressViewController.m in Sources */,
+				69557D5A1D178E4400C57A61 /* DetailsViewController.m in Sources */,
 				D6759E2C1D138AA400EE5743 /* UIImage+imageContentWithColor.m in Sources */,
 				D6759E661D138AA400EE5743 /* SceneryCell.m in Sources */,
 				D6759E5C1D138AA400EE5743 /* CityDetailCell.m in Sources */,

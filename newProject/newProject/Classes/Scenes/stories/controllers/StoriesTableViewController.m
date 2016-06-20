@@ -149,7 +149,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    if ([_dataArr[_dataArr.count - 1 - indexPath.row] photoArr].count > 0) {
+        return 200;
+    }else{
+        return 100;
+    }
+    
 }
 
 
