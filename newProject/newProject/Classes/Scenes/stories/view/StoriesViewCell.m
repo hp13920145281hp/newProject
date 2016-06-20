@@ -19,7 +19,6 @@
     self.userName.text = model.userName;
     self.dynamicLabel.text = model.text;
     self.headerImg.image = model.header;
-    NSLog(@"%ld", model.photoArr.count);
     switch (model.photoArr.count) {
         case 1:
             self.firstImg.image = model.photoArr[0];

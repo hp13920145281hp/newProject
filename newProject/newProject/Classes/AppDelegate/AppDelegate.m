@@ -18,8 +18,6 @@
 //地图管理对象
 @property(nonatomic,strong)BMKMapManager * mapManager;
 
-
-
 @end
 
 @implementation AppDelegate

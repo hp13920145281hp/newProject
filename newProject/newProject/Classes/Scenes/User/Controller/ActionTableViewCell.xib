@@ -18,7 +18,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDJ-zY-vra">
                         <rect key="frame" x="5" y="5" width="35" height="34"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="LDJ-zY-vra" secondAttribute="height" multiplier="37:35" id="908-1q-LJQ"/>
+                            <constraint firstAttribute="width" secondItem="LDJ-zY-vra" secondAttribute="height" multiplier="1:1" constant="1" id="908-1q-LJQ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk7-Me-18O">
@@ -33,7 +33,7 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tcu-Rb-1yi">
                         <rect key="frame" x="251" y="5" width="51" height="33"/>
                     </switch>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-jz-HlK">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-jz-HlK">
                         <rect key="frame" x="229" y="5" width="71" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="2NB-jz-HlK" secondAttribute="height" multiplier="19:9" id="dWD-HO-Zdc"/>
