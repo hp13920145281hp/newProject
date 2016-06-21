@@ -1,9 +1,9 @@
 //
-//  CityDetailViewController.h
-//  TravelDiary
+//  CityHotSeneryTableViewCell.m
+//  四处逛逛
 //
-//  Created by lanou3g on 15/11/14.
-//  Copyright © 2015年 YDB MAC. All rights reserved.
+//  Created by SuperCodi on 16/6/16.
+//  Copyright © 2016年 hupan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

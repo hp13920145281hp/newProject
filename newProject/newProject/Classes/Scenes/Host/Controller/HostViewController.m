@@ -19,6 +19,7 @@
 #import "SceneryDetailViewController.h"
 #import <AFNetworking.h>
 #import "CityListTableViewController.h"
+#import "SearchBarTableViewController.h"
 
 //滚动图
 #define scrollURL @"http://open.qyer.com/qyer/recommands/entry?app_installtime=1435837675&client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&page=1&track_app_channel=App%2520Store&track_app_version=6.3&track_device_info=iPhone7%2C2&track_deviceid=94600906-5BB7-43E7-9E16-C479A03EE469&track_os=ios%25208.3&v=1"
@@ -178,11 +179,8 @@
     }else{
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:kGJUrl,++_currentPage1]]] options:NSJSONReadingAllowFragments error:nil];
         NSArray *array = dic[@"items"];
-        
         for (NSDictionary *dict in array) {
-            
             SceneryModel *model = [SceneryModel new];
-            
             [model setValuesForKeysWithDictionary:dict];
             NSDictionary *dictImg =dict[@"img"];
             model.picUrl = dictImg[@"picUrl"];
@@ -268,11 +266,21 @@
     //添加搜索框
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 35)];
     UISearchBar *searchBar = [[UISearchBar alloc] init];
+    //当点击UITextField的时候不要弹出键盘
+//    searchBar.inputView = [[UIView alloc]initWithFrame:CGRectZero];
     searchBar.delegate = self;
     searchBar.placeholder = @"请搜索您喜欢的旅游景点";
     searchBar.frame = CGRectMake(0, 0, 250, 30);
     [titleView addSubview:searchBar];
     self.navigationItem.titleView = titleView;
+}
+//点击搜索框跳到新页面
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:YES animated:YES];
+    //隐藏掉搜索框右侧的取消按钮
+    [searchBar setShowsCancelButton:NO];
+    SearchBarTableViewController *searchBarVC = [[SearchBarTableViewController alloc]init];
+    [self.navigationController pushViewController:searchBarVC animated:YES];
 }
 #pragma mark 点击全国按钮进入全国位置选择界面
 -(void)clickButton{
@@ -311,14 +319,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -1,9 +1,9 @@
 //
-//  CityDetailViewController.m
-//  TravelDiary
+//  CityHotSeneryTableViewCell.m
+//  四处逛逛
 //
-//  Created by lanou3g on 15/11/14.
-//  Copyright © 2015年 YDB MAC. All rights reserved.
+//  Created by SuperCodi on 16/6/16.
+//  Copyright © 2016年 hupan. All rights reserved.
 //
 
 #import "CityDetailViewController.h"
@@ -34,9 +34,7 @@ const CGFloat topViewH = 350;
     
     [self loadData];
     [self loadTableView];
-    
-    
-    
+ 
 }
 
 - (void)loadTableView{
@@ -45,7 +43,7 @@ const CGFloat topViewH = 350;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CityDetailCell" bundle:nil] forCellReuseIdentifier:@"CityDetailCell"];
    //设置可以拉去滚动的区域
-  self.tableView.contentInset = UIEdgeInsetsMake(topViewH*0.8, 0, 0, 0);
+  self.tableView.contentInset = UIEdgeInsetsMake(topViewH * 0.8, 0, 0, 0);
     
     UIImageView *topView = [[UIImageView alloc]init];
     
