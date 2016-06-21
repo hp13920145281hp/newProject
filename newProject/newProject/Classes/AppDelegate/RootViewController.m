@@ -10,7 +10,7 @@
 #import "HostViewController.h"
 #import "MapViewController.h"
 #import "StoriesTableViewController.h"
-#import "UserViewController.h"
+#import "User1ViewController.h"
 #import "CustomTabBar.h"
 #import "UIImage+imageContentWithColor.h"
 
@@ -58,7 +58,7 @@
     MapViewController *messageVC = [[MapViewController alloc]init];
     [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:messageVC] NormalImage:@"地图 (3)" SelectImage:@"地图"];
     //个人
-    UserViewController *userVC = [[UserViewController alloc]init];
+    User1ViewController *userVC = [[User1ViewController alloc]init];
     [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:userVC] NormalImage:@"个人 (2)" SelectImage:@"个人 (1)"];
 }
 //获取自定义tabBar

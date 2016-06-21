@@ -13,6 +13,8 @@
 #import <FMDB.h>
 #import "StoriesModel.h"
 #import <Wilddog.h>
+#import "DetailsViewController.h"
+#import "GiFHUD.h"
 
 @interface StoriesTableViewController ()
 //数据数组
@@ -48,6 +50,14 @@
     [self getLoginStatus];
 }
 
+//
+- (void)setUpGifHUD{
+    //指定图片
+    [GiFHUD setGifWithImageName:@"qiche.gif"];
+    //显示
+    [GiFHUD show];
+}
+
 //tableView设置
 - (void)setTableView{
     //注册cell
@@ -67,11 +77,13 @@
 
 //获取动态
 - (void)getStories{
+    [self setUpGifHUD];
     Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/stories"];
     [storiesWilddog observeEventType:WEventTypeChildAdded withBlock:^(WDataSnapshot * _Nonnull snapshot) {
         StoriesModel *model = [[StoriesModel alloc] init];
         [model setValuesForKeysWithDictionary:snapshot.value];
         [_dataArr addObject:model];
+        [GiFHUD dismiss];
         [self.tableView reloadData];
         
     } withCancelBlock:^(NSError * _Nonnull error) {
@@ -81,6 +93,8 @@
     }];
     
 }
+
+
 
 
 //动态
@@ -149,9 +163,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    if ([_dataArr[_dataArr.count - 1 - indexPath.row] photoArr].count > 0) {
+        return 200;
+    }else{
+        return 100;
+    }
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailsViewController *detailsVC = [[DetailsViewController alloc] init];
+    detailsVC.model = _dataArr[_dataArr.count - 1 - indexPath.row];
+    [self.navigationController pushViewController:detailsVC animated:YES];
+}
 
 
 /*

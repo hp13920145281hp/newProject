@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -12,13 +12,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDJ-zY-vra">
                         <rect key="frame" x="5" y="5" width="35" height="34"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="LDJ-zY-vra" secondAttribute="height" multiplier="37:35" id="908-1q-LJQ"/>
+                            <constraint firstAttribute="width" secondItem="LDJ-zY-vra" secondAttribute="height" multiplier="1:1" constant="1" id="908-1q-LJQ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk7-Me-18O">
@@ -33,7 +33,7 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tcu-Rb-1yi">
                         <rect key="frame" x="251" y="5" width="51" height="33"/>
                     </switch>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-jz-HlK">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-jz-HlK">
                         <rect key="frame" x="229" y="5" width="71" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="2NB-jz-HlK" secondAttribute="height" multiplier="19:9" id="dWD-HO-Zdc"/>
@@ -52,18 +52,18 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="hH8-VE-wC3" secondAttribute="bottom" constant="5" id="3Eg-OH-8Ar"/>
                     <constraint firstAttribute="bottom" secondItem="2NB-jz-HlK" secondAttribute="bottom" constant="5" id="5Hl-PK-JhN"/>
-                    <constraint firstAttribute="bottom" secondItem="LDJ-zY-vra" secondAttribute="bottom" constant="5" id="5ff-nm-x4T"/>
+                    <constraint firstAttribute="bottom" secondItem="LDJ-zY-vra" secondAttribute="bottom" constant="8" id="5ff-nm-x4T"/>
                     <constraint firstItem="Bk7-Me-18O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BSk-uL-ktY"/>
                     <constraint firstItem="Tcu-Rb-1yi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="JmF-7i-E7w"/>
                     <constraint firstAttribute="trailing" secondItem="Tcu-Rb-1yi" secondAttribute="trailing" constant="20" id="N2r-q9-32G"/>
                     <constraint firstAttribute="bottom" secondItem="Tcu-Rb-1yi" secondAttribute="bottom" constant="5" id="bA1-8v-9pN"/>
                     <constraint firstItem="2NB-jz-HlK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="hsT-mj-bBJ"/>
                     <constraint firstItem="Bk7-Me-18O" firstAttribute="leading" secondItem="LDJ-zY-vra" secondAttribute="trailing" constant="10" id="kOx-Yf-9go"/>
-                    <constraint firstItem="LDJ-zY-vra" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="oOK-G3-U7V"/>
+                    <constraint firstItem="LDJ-zY-vra" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="oOK-G3-U7V"/>
                     <constraint firstAttribute="bottom" secondItem="Bk7-Me-18O" secondAttribute="bottom" constant="5" id="qXM-Ap-WIc"/>
                     <constraint firstAttribute="trailing" secondItem="2NB-jz-HlK" secondAttribute="trailing" constant="20" id="uCO-BW-E3X"/>
                     <constraint firstAttribute="trailing" secondItem="hH8-VE-wC3" secondAttribute="trailing" constant="20" id="uuW-7c-T1i"/>
-                    <constraint firstItem="LDJ-zY-vra" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="xoB-du-7jU"/>
+                    <constraint firstItem="LDJ-zY-vra" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xoB-du-7jU"/>
                     <constraint firstItem="hH8-VE-wC3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="zQR-Bc-tpQ"/>
                 </constraints>
             </tableViewCellContentView>

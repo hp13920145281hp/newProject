@@ -1,4 +1,0 @@
-platform:ios,’9.2’                 
-target 'newProject' do
-pod 'AFNetworking'
-end

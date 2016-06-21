@@ -134,11 +134,25 @@
     //相机事件
     UIAlertAction *cameraAC = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //指定资源类型为照相机获取图片
-        _imgPicker = [[UIImagePickerController alloc] init];
-        _imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        _imgPicker.allowsEditing = YES;
-        _imgPicker.delegate = self;
-        [weakSelf presentViewController:_imgPicker animated:YES completion:nil];
+//        _imgPicker = [[UIImagePickerController alloc] init];
+//        _imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        _imgPicker.allowsEditing = YES;
+//        _imgPicker.delegate = self;
+//        [weakSelf presentViewController:_imgPicker animated:YES completion:nil];
+        //先设定sourceType为相机，然后判断相机是否可用（ipod）没相机，不可用将sourceType设定为相片库
+        
+        UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+        if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        //sourceType = UIImagePickerControllerSourceTypeCamera; //照相机
+        //sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图片库
+        //sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; //保存的相片
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];//初始化
+        picker.delegate = self;
+        picker.allowsEditing = YES;//设置可编辑
+        picker.sourceType = sourceType;
+        [self presentModalViewController:picker animated:YES];//进入照相界面
     }];
     
     //取消操作
@@ -156,7 +170,7 @@
 
 //点击相册中的图片或照相机照完后点击use  后触发的方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-
+    
 }
 
 
