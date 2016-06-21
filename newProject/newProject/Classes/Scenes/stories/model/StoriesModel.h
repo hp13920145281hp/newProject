@@ -18,7 +18,6 @@
 @property (strong, nonatomic)NSMutableArray *photoArr;
 //头像
 @property (strong, nonatomic)UIImage *header;
-//用户ID
-@property (copy, nonatomic)NSString *userID;
+
 
 @end

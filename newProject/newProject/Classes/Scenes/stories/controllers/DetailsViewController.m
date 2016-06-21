@@ -80,7 +80,7 @@
 //设置添加好友按钮
 - (void)setAddBtn{
     
-    if ([_model.userID isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]]) {
+    if ([_model.userName isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]]) {
         [self.addFriendsBtn removeFromSuperview];
     }
 }
