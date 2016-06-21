@@ -166,21 +166,44 @@
             break;
         case 1:
         {
+            //完善信息
             PerfectInformationViewController *perfectVC = [[PerfectInformationViewController alloc]initWithNibName:@"PerfectInformationViewController" bundle:nil];
             [self.navigationController pushViewController:perfectVC animated:YES];
         }
             break;
         case 2:
         {
-            [self clearCache:[self getCachesPath]];
-            NSLog(@"清除");
+            //清除缓存
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否确认清除" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *alertAction1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self clearCache:[self getCachesPath]];
+                NSLog(@"清除");
+                [self.actionTableView reloadData];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+            UIAlertAction *alertAction2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alertController addAction:alertAction1];
+            [alertController addAction:alertAction2];
+            [self presentViewController:alertController animated:YES completion:nil];
+            
         }
             break;
         case 3:
-            
+        {
+            //夜间模式
+        }
             break;
         case 4:
-            
+        {
+            //版本更新
+        }
+            break;
+        case 5:
+        {
+            //关于我们
+        }
             break;
         default:
             break;
@@ -246,14 +269,12 @@
             
             //如有需要，加入条件，过滤掉不想删除的文件
             
-            NSString *absolutePath = [path stringByAppendingPathComponent:fileName];
-            
+            NSString *absolutePath = [path stringByAppendingPathComponent:fileName];            
             [fileManager removeItemAtPath:absolutePath error:nil];
         }
     }
     // SDImageCache 自带缓存
     [[SDImageCache sharedImageCache] cleanDisk];
-    
 }
 
 
