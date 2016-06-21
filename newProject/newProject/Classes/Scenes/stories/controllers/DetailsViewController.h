@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoriesModel.h"
+
 
 @interface DetailsViewController : UIViewController
+
+//传值
+@property (strong, nonatomic)StoriesModel *model;
 
 @end

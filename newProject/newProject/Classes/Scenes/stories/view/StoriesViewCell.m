@@ -32,6 +32,7 @@
             self.thirdImg.image = nil;
             self.fourthImg.image = nil;
             break;
+            break;
         case 3:
             self.firstImg.image = model.photoArr[0];
             self.secondImg.image = model.photoArr[1];
@@ -45,13 +46,15 @@
             self.fourthImg.image = model.photoArr[3];
             break;
         default:
-            self.firstImg.image = nil;
+            self.firstImg.image = nil ;
             self.secondImg.image = nil;
             self.thirdImg.image = nil;
             self.fourthImg.image = nil;
             break;
     }
 }
+
+
 
 - (void)layoutSubviews{
     
