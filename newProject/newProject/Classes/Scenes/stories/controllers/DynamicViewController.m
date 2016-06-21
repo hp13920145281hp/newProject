@@ -74,9 +74,9 @@
     Wilddog *newWilddog = [storiesWilddog childByAutoId];
     NSDictionary *dic = [[NSDictionary alloc] init];
     if (_dataArr.count > 0) {
-        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr, @"userID":[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]};
+        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr};
     }else{
-        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"userID":[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]};
+        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg};
     }
     
     [newWilddog setValue:dic];

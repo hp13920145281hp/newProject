@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAm-p0-GDy">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1472"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="2098"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eby-cs-NY2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -169,8 +169,8 @@
                                         <action selector="segmentedAction:" destination="-1" eventType="valueChanged" id="mgp-EW-3WM"/>
                                     </connections>
                                 </segmentedControl>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FkC-dt-CGq">
-                                    <rect key="frame" x="0.0" y="390" width="414" height="1082"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FkC-dt-CGq">
+                                    <rect key="frame" x="0.0" y="390" width="414" height="1708"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableView>
                             </subviews>
@@ -197,7 +197,7 @@
                         <constraint firstAttribute="trailing" secondItem="VAm-p0-GDy" secondAttribute="trailing" id="Vmi-CH-RZ3"/>
                         <constraint firstItem="VAm-p0-GDy" firstAttribute="top" secondItem="ftX-MG-ZfX" secondAttribute="top" id="XpR-DF-Re6"/>
                         <constraint firstAttribute="bottom" secondItem="VAm-p0-GDy" secondAttribute="bottom" id="d44-sg-lgC"/>
-                        <constraint firstItem="VAm-p0-GDy" firstAttribute="centerY" secondItem="ftX-MG-ZfX" secondAttribute="centerY" multiplier="2" id="jyI-RI-A0O"/>
+                        <constraint firstItem="VAm-p0-GDy" firstAttribute="centerY" secondItem="ftX-MG-ZfX" secondAttribute="centerY" multiplier="2.85" id="jyI-RI-A0O"/>
                         <constraint firstItem="VAm-p0-GDy" firstAttribute="centerX" secondItem="ftX-MG-ZfX" secondAttribute="centerX" id="n0o-XH-UOL"/>
                     </constraints>
                 </scrollView>

@@ -113,6 +113,7 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未登录" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:alertAC];
+        [GiFHUD dismiss];
         [self presentViewController:alert animated:YES completion:nil];
     
     }
@@ -124,7 +125,7 @@
 - (void)getLoginStatus{
         Wilddog *userName = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/users"];
         
-        Wilddog *newName = [userName childByAppendingPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]];
+        Wilddog *newName = [userName childByAppendingPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]];
         
         [newName observeEventType:WEventTypeValue withBlock:^(WDataSnapshot * _Nonnull snapshot) {
             _userName = snapshot.value[@"userName"];

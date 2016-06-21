@@ -51,12 +51,15 @@
     //主页面
     HostViewController *activityVC = [[HostViewController alloc]initWithNibName:@"HostViewController" bundle:nil];
     [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:activityVC] NormalImage:@"主页(4)" SelectImage:@"主页"];
-    //见闻
-    StoriesTableViewController *searchVC = [[StoriesTableViewController alloc]initWithStyle:UITableViewStylePlain];
-    [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:searchVC] NormalImage:@"发布" SelectImage:@"发布 (1)"];
+    
     //地图
     MapViewController *messageVC = [[MapViewController alloc]init];
     [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:messageVC] NormalImage:@"地图 (3)" SelectImage:@"地图"];
+    
+    //见闻
+    StoriesTableViewController *searchVC = [[StoriesTableViewController alloc]initWithStyle:UITableViewStylePlain];
+    [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:searchVC] NormalImage:@"发布" SelectImage:@"发布 (1)"];
+    
     //个人
     User1ViewController *userVC = [[User1ViewController alloc]init];
     [self addOneChildViewController:[[UINavigationController alloc]initWithRootViewController:userVC] NormalImage:@"个人 (2)" SelectImage:@"个人 (1)"];
