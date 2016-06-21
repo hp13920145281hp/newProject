@@ -1,9 +1,9 @@
 //
-//  SceneryCell.h
-//  TravelDiary
+//  ScrollDetailViewController.h
+//  四处逛逛
 //
-//  Created by lanou3g on 15/11/13.
-//  Copyright © 2015年 YDB MAC. All rights reserved.
+//  Created by SuperCodi on 16/6/15.
+//  Copyright © 2016年 hupan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -84,7 +84,6 @@
 		D6759E651D138AA400EE5743 /* feedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6759DDD1D138AA400EE5743 /* feedbackViewController.xib */; };
 		D6759E661D138AA400EE5743 /* SceneryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759DDF1D138AA400EE5743 /* SceneryCell.m */; };
 		D6759E671D138AA400EE5743 /* SceneryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6759DE01D138AA400EE5743 /* SceneryCell.xib */; };
-		D6759E681D138AA400EE5743 /* ScrollDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759DE21D138AA400EE5743 /* ScrollDetailViewController.m */; };
 		D6759E691D138AA400EE5743 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759DE71D138AA400EE5743 /* AddressViewController.m */; };
 		D6759E6A1D138AA400EE5743 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6759DE91D138AA400EE5743 /* MapViewController.m */; };
 		D6759E6B1D138AA400EE5743 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6759DEA1D138AA400EE5743 /* MapViewController.xib */; };
@@ -126,6 +125,9 @@
 		D68BE2F01D13946F00266260 /* iconfont-fuwuxiangqing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */; };
 		D68BE2F11D13946F00266260 /* iconfont-shijian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */; };
 		D68BE2F21D13946F00266260 /* sanjiaoyou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */; };
+		D6B001E21D17E032004EA1B2 /* ScrollDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B001E11D17E032004EA1B2 /* ScrollDetailViewController.m */; };
+		D6B001E61D180B33004EA1B2 /* SearchBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B001E41D180B33004EA1B2 /* SearchBarTableViewController.m */; };
+		D6B001E71D180B33004EA1B2 /* SearchBarTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B001E51D180B33004EA1B2 /* SearchBarTableViewController.xib */; };
 		D6BBDE6C1D14DC97006DC13B /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BBDE6B1D14DC97006DC13B /* citydict.plist */; };
 		D6BBDE6F1D14E155006DC13B /* CityListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BBDE6E1D14E155006DC13B /* CityListTableViewController.m */; };
 		E42AB131DA8D9871C2CAD30E /* libPods-newProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828988210866BDBCD7CCAAC /* libPods-newProject.a */; };
@@ -240,7 +242,6 @@
 		D6759DDF1D138AA400EE5743 /* SceneryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneryCell.m; sourceTree = "<group>"; };
 		D6759DE01D138AA400EE5743 /* SceneryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneryCell.xib; sourceTree = "<group>"; };
 		D6759DE11D138AA400EE5743 /* ScrollDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollDetailViewController.h; sourceTree = "<group>"; };
-		D6759DE21D138AA400EE5743 /* ScrollDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollDetailViewController.m; sourceTree = "<group>"; };
 		D6759DE61D138AA400EE5743 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
 		D6759DE71D138AA400EE5743 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
 		D6759DE81D138AA400EE5743 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -299,6 +300,10 @@
 		D68BE2EC1D13946F00266260 /* iconfont-fuwuxiangqing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-fuwuxiangqing@2x.png"; sourceTree = "<group>"; };
 		D68BE2ED1D13946F00266260 /* iconfont-shijian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-shijian@2x.png"; sourceTree = "<group>"; };
 		D68BE2EE1D13946F00266260 /* sanjiaoyou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sanjiaoyou@2x.png"; sourceTree = "<group>"; };
+		D6B001E11D17E032004EA1B2 /* ScrollDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollDetailViewController.m; sourceTree = "<group>"; };
+		D6B001E31D180B33004EA1B2 /* SearchBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarTableViewController.h; sourceTree = "<group>"; };
+		D6B001E41D180B33004EA1B2 /* SearchBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarTableViewController.m; sourceTree = "<group>"; };
+		D6B001E51D180B33004EA1B2 /* SearchBarTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarTableViewController.xib; sourceTree = "<group>"; };
 		D6BBDE6B1D14DC97006DC13B /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
 		D6BBDE6D1D14E155006DC13B /* CityListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityListTableViewController.h; sourceTree = "<group>"; };
 		D6BBDE6E1D14E155006DC13B /* CityListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityListTableViewController.m; sourceTree = "<group>"; };
@@ -508,6 +513,9 @@
 				D6759DC21D138AA400EE5743 /* SceneryDetailViewController.xib */,
 				D6BBDE6D1D14E155006DC13B /* CityListTableViewController.h */,
 				D6BBDE6E1D14E155006DC13B /* CityListTableViewController.m */,
+				D6B001E31D180B33004EA1B2 /* SearchBarTableViewController.h */,
+				D6B001E41D180B33004EA1B2 /* SearchBarTableViewController.m */,
+				D6B001E51D180B33004EA1B2 /* SearchBarTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,7 +559,7 @@
 				D6759DDF1D138AA400EE5743 /* SceneryCell.m */,
 				D6759DE01D138AA400EE5743 /* SceneryCell.xib */,
 				D6759DE11D138AA400EE5743 /* ScrollDetailViewController.h */,
-				D6759DE21D138AA400EE5743 /* ScrollDetailViewController.m */,
+				D6B001E11D17E032004EA1B2 /* ScrollDetailViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -870,6 +878,7 @@
 				D6759E701D138AA400EE5743 /* address_0.jpg in Resources */,
 				D6759D771D13874900EE5743 /* Main.storyboard in Resources */,
 				D6759E521D138AA400EE5743 /* destinationViewController.xib in Resources */,
+				D6B001E71D180B33004EA1B2 /* SearchBarTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,6 +951,7 @@
 				D6759E291D138AA400EE5743 /* RootViewController.m in Sources */,
 				D6759E2A1D138AA400EE5743 /* SendButton.m in Sources */,
 				D6759E531D138AA400EE5743 /* HostViewController.m in Sources */,
+				D6B001E21D17E032004EA1B2 /* ScrollDetailViewController.m in Sources */,
 				D6759E621D138AA400EE5743 /* CityNameCell.m in Sources */,
 				D6759E571D138AA400EE5743 /* CityDetail.m in Sources */,
 				D6759E601D138AA400EE5743 /* CityHotSeneryTableViewCell.m in Sources */,
@@ -950,7 +960,7 @@
 				D6759E821D138AA400EE5743 /* StoriesModel.m in Sources */,
 				D6759E2B1D138AA400EE5743 /* HP_DataBaseTool.m in Sources */,
 				D6759E511D138AA400EE5743 /* destinationViewController.m in Sources */,
-				D6759E681D138AA400EE5743 /* ScrollDetailViewController.m in Sources */,
+				D6B001E61D180B33004EA1B2 /* SearchBarTableViewController.m in Sources */,
 				D6759E691D138AA400EE5743 /* AddressViewController.m in Sources */,
 				D6759E2C1D138AA400EE5743 /* UIImage+imageContentWithColor.m in Sources */,
 				D6759E661D138AA400EE5743 /* SceneryCell.m in Sources */,
