@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -83,13 +83,26 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAN-hw-50r">
-                    <rect key="frame" x="185" y="518" width="99" height="30"/>
+                    <rect key="frame" x="210" y="518" width="104" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="x5D-9G-tZd"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="没有账号,注册!"/>
                     <connections>
                         <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="dlY-KA-h7i"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ph-Vr-D9E">
+                    <rect key="frame" x="206" y="516" width="2" height="30"/>
+                    <color key="backgroundColor" red="0.020247054970000001" green="0.00027395650710000002" blue="0.010351657" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usL-Jw-0e2">
+                    <rect key="frame" x="137" y="518" width="60" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="忘记密码"/>
+                    <connections>
+                        <action selector="forgetPasswordAction:" destination="-1" eventType="touchUpInside" id="enR-z7-Gtd"/>
                     </connections>
                 </button>
             </subviews>
@@ -110,10 +123,10 @@
                 <constraint firstAttribute="bottom" secondItem="EvA-js-WCP" secondAttribute="bottom" id="RbD-wq-wQT"/>
                 <constraint firstItem="Xyq-Bc-8ee" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="44" id="SCV-d6-uI4"/>
                 <constraint firstItem="clj-W0-uQa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="44" id="SL0-3Z-1NZ"/>
-                <constraint firstAttribute="trailing" secondItem="vAN-hw-50r" secondAttribute="trailing" constant="130" id="Uhp-Cw-tUo"/>
+                <constraint firstAttribute="trailing" secondItem="vAN-hw-50r" secondAttribute="trailing" constant="100" id="Uhp-Cw-tUo"/>
                 <constraint firstAttribute="trailing" secondItem="4Y7-HK-SMI" secondAttribute="trailing" constant="130" id="VKi-uo-n90"/>
                 <constraint firstItem="ik5-Q4-msG" firstAttribute="top" secondItem="xvv-iJ-vdH" secondAttribute="bottom" constant="48" id="aYT-jF-5Tl"/>
-                <constraint firstItem="vAN-hw-50r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="185" id="bbp-DR-IDT"/>
+                <constraint firstItem="vAN-hw-50r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="210" id="bbp-DR-IDT"/>
                 <constraint firstItem="xvv-iJ-vdH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="145" id="e0k-PD-drH"/>
                 <constraint firstItem="xvv-iJ-vdH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="132" id="eJ9-lq-T2r"/>
                 <constraint firstAttribute="trailing" secondItem="Rad-Xq-bfY" secondAttribute="trailing" constant="44" id="hmW-b8-PYt"/>

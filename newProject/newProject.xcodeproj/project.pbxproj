@@ -23,6 +23,10 @@
 		69C95C1C1D18E46D0092E1E6 /* 详情页面背景.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69C95C1B1D18E46D0092E1E6 /* 详情页面背景.jpg */; };
 		7E36B5431D17CEC60090921E /* PerfectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */; };
 		7E36B5441D17CEC60090921E /* PerfectInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */; };
+		7EFD9BE91D18E76F00ABE393 /* CollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD9BE81D18E76F00ABE393 /* CollectViewController.m */; };
+		7EFD9BEC1D18E8DA00ABE393 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD9BEB1D18E8DA00ABE393 /* AboutUsViewController.m */; };
+		7EFD9BF01D18EB1C00ABE393 /* forgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD9BEE1D18EB1C00ABE393 /* forgetPasswordViewController.m */; };
+		7EFD9BF11D18EB1C00ABE393 /* forgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD9BEF1D18EB1C00ABE393 /* forgetPasswordViewController.xib */; };
 		D19FD1F61D14134E00640D4B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */; };
 		D19FD2001D141BA200640D4B /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1FE1D141BA200640D4B /* NavigationViewController.m */; };
 		D19FD2011D141BA200640D4B /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19FD1FF1D141BA200640D4B /* NavigationViewController.xib */; };
@@ -170,6 +174,13 @@
 		7E36B5401D17CEC60090921E /* PerfectInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfectInformationViewController.h; sourceTree = "<group>"; };
 		7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfectInformationViewController.m; sourceTree = "<group>"; };
 		7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerfectInformationViewController.xib; sourceTree = "<group>"; };
+		7EFD9BE71D18E76F00ABE393 /* CollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectViewController.h; sourceTree = "<group>"; };
+		7EFD9BE81D18E76F00ABE393 /* CollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectViewController.m; sourceTree = "<group>"; };
+		7EFD9BEA1D18E8DA00ABE393 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		7EFD9BEB1D18E8DA00ABE393 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		7EFD9BED1D18EB1C00ABE393 /* forgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPasswordViewController.h; sourceTree = "<group>"; };
+		7EFD9BEE1D18EB1C00ABE393 /* forgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPasswordViewController.m; sourceTree = "<group>"; };
+		7EFD9BEF1D18EB1C00ABE393 /* forgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgetPasswordViewController.xib; sourceTree = "<group>"; };
 		BEEE2EC124AD750F856F4931 /* Pods-newProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-newProject/Pods-newProject.release.xcconfig"; sourceTree = "<group>"; };
 		D19FD1F41D14134E00640D4B /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
@@ -783,6 +794,13 @@
 				D6759E1E1D138AA400EE5743 /* registViewController.h */,
 				D6759E1F1D138AA400EE5743 /* registViewController.m */,
 				D6759E201D138AA400EE5743 /* registViewController.xib */,
+				7EFD9BE71D18E76F00ABE393 /* CollectViewController.h */,
+				7EFD9BE81D18E76F00ABE393 /* CollectViewController.m */,
+				7EFD9BEA1D18E8DA00ABE393 /* AboutUsViewController.h */,
+				7EFD9BEB1D18E8DA00ABE393 /* AboutUsViewController.m */,
+				7EFD9BED1D18EB1C00ABE393 /* forgetPasswordViewController.h */,
+				7EFD9BEE1D18EB1C00ABE393 /* forgetPasswordViewController.m */,
+				7EFD9BEF1D18EB1C00ABE393 /* forgetPasswordViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -926,6 +944,7 @@
 				D68BE2F01D13946F00266260 /* iconfont-fuwuxiangqing@2x.png in Resources */,
 				D6759E631D138AA400EE5743 /* CityNameCell.xib in Resources */,
 				D6759E5F1D138AA400EE5743 /* CityDetailViewController.xib in Resources */,
+				7EFD9BF11D18EB1C00ABE393 /* forgetPasswordViewController.xib in Resources */,
 				D6759E4F1D138AA400EE5743 /* 返回 (2).png in Resources */,
 				D63FC1221D14EEC50054ABBA /* 下一页.png in Resources */,
 				D6759E3D1D138AA400EE5743 /* 反馈.png in Resources */,
@@ -1020,6 +1039,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFD9BEC1D18E8DA00ABE393 /* AboutUsViewController.m in Sources */,
 				D6759E8D1D138AA400EE5743 /* User.m in Sources */,
 				D6759E871D138AA400EE5743 /* LoginViewController.m in Sources */,
 				D19FD2001D141BA200640D4B /* NavigationViewController.m in Sources */,
@@ -1031,6 +1051,7 @@
 				69557D411D177CBD00C57A61 /* User1ViewController.m in Sources */,
 				D6759E6E1D138AA400EE5743 /* SearchViewController.m in Sources */,
 				69C95C181D18DB310092E1E6 /* GiFHUD.m in Sources */,
+				7EFD9BE91D18E76F00ABE393 /* CollectViewController.m in Sources */,
 				D6759E891D138AA400EE5743 /* registViewController.m in Sources */,
 				D19FD2061D141C5800640D4B /* PathViewController.m in Sources */,
 				D6759E291D138AA400EE5743 /* RootViewController.m in Sources */,
@@ -1038,6 +1059,7 @@
 				D6759E531D138AA400EE5743 /* HostViewController.m in Sources */,
 				D6B001E21D17E032004EA1B2 /* ScrollDetailViewController.m in Sources */,
 				D6759E621D138AA400EE5743 /* CityNameCell.m in Sources */,
+				7EFD9BF01D18EB1C00ABE393 /* forgetPasswordViewController.m in Sources */,
 				D6759E571D138AA400EE5743 /* CityDetail.m in Sources */,
 				D6759E601D138AA400EE5743 /* CityHotSeneryTableViewCell.m in Sources */,
 				D6759E5E1D138AA400EE5743 /* CityDetailViewController.m in Sources */,

@@ -13,6 +13,8 @@
 #import <UIImageView+WebCache.h>
 #import <Wilddog.h>
 #import "PerfectInformationViewController.h"
+#import "CollectViewController.h"
+#import "AboutUsViewController.h"
 
 @interface User1ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -162,7 +164,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
         case 0:
-            
+        {
+            //收藏
+            CollectViewController *collectionVC = [[CollectViewController alloc]init];
+            [self.navigationController pushViewController:collectionVC animated:YES];
+        }
             break;
         case 1:
         {
@@ -198,11 +204,19 @@
         case 4:
         {
             //版本更新
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"此版本已是最新的版本" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:alertAC];
+            [self presentViewController:alert animated:YES completion:nil];
         }
             break;
         case 5:
         {
             //关于我们
+            AboutUsViewController *aboutUsVC = [[AboutUsViewController alloc]init];
+            [self.navigationController pushViewController:aboutUsVC animated:YES];
         }
             break;
         default:
