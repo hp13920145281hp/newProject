@@ -20,6 +20,7 @@
 		69C95C181D18DB310092E1E6 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C95C151D18DB310092E1E6 /* GiFHUD.m */; };
 		69C95C191D18DB310092E1E6 /* pika.gif in Resources */ = {isa = PBXBuildFile; fileRef = 69C95C161D18DB310092E1E6 /* pika.gif */; };
 		69C95C1A1D18DB310092E1E6 /* qiche.gif in Resources */ = {isa = PBXBuildFile; fileRef = 69C95C171D18DB310092E1E6 /* qiche.gif */; };
+		69C95C1C1D18E46D0092E1E6 /* 详情页面背景.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69C95C1B1D18E46D0092E1E6 /* 详情页面背景.jpg */; };
 		7E36B5431D17CEC60090921E /* PerfectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */; };
 		7E36B5441D17CEC60090921E /* PerfectInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */; };
 		D19FD1F61D14134E00640D4B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FD1F51D14134E00640D4B /* HomeCollectionViewCell.m */; };
@@ -163,6 +164,7 @@
 		69C95C151D18DB310092E1E6 /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
 		69C95C161D18DB310092E1E6 /* pika.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika.gif; sourceTree = "<group>"; };
 		69C95C171D18DB310092E1E6 /* qiche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = qiche.gif; sourceTree = "<group>"; };
+		69C95C1B1D18E46D0092E1E6 /* 详情页面背景.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "详情页面背景.jpg"; sourceTree = "<group>"; };
 		7E36B5401D17CEC60090921E /* PerfectInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfectInformationViewController.h; sourceTree = "<group>"; };
 		7E36B5411D17CEC60090921E /* PerfectInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfectInformationViewController.m; sourceTree = "<group>"; };
 		7E36B5421D17CEC60090921E /* PerfectInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerfectInformationViewController.xib; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 		D6759D921D138AA400EE5743 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69C95C1B1D18E46D0092E1E6 /* 详情页面背景.jpg */,
 				69557D451D177F4300C57A61 /* 个人页面图片 */,
 				D63FC11D1D14E7010054ABBA /* DefaultAvatar.png */,
 				D63FC11E1D14E7010054ABBA /* DefaultAvatar@2x.png */,
@@ -933,6 +936,7 @@
 				D6759E4A1D138AA400EE5743 /* 景点.png in Resources */,
 				D63FC1241D14EFE00054ABBA /* 个人页背景.jpg in Resources */,
 				D6759E311D138AA400EE5743 /* fujin.jpg in Resources */,
+				69C95C1C1D18E46D0092E1E6 /* 详情页面背景.jpg in Resources */,
 				D6759E4C1D138AA400EE5743 /* 用户2.png in Resources */,
 				D6759E861D138AA400EE5743 /* ActionTableViewCell.xib in Resources */,
 				D6759E3E1D138AA400EE5743 /* 发布 (1).png in Resources */,

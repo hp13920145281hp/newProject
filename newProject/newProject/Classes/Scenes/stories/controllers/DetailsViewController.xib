@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="详情页面背景.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="vmS-68-Ozh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="详情页面背景.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vmS-68-Ozh">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeT-Kk-oRx">
@@ -85,6 +85,6 @@
     </objects>
     <resources>
         <image name="DefaultAvatar.png" width="70" height="70"/>
-        <image name="详情页面背景.jpeg" width="1200" height="1893"/>
+        <image name="详情页面背景.jpg" width="1200" height="1893"/>
     </resources>
 </document>
