@@ -11,6 +11,8 @@
 #import <AFNetworking.h>
 #import "User.h"
 #import <Wilddog.h>
+#import "forgetPasswordViewController.h"
+
 @interface LoginViewController ()
 //登录账号
 @property (weak, nonatomic) IBOutlet UITextField *loginNameLabel;
@@ -62,16 +64,15 @@
     registViewController *registVC = [[registViewController alloc]init];
     [self.navigationController pushViewController:registVC animated:YES];
 }
-
-
+//忘记密码
+- (IBAction)forgetPasswordAction:(UIButton *)sender {
+    forgetPasswordViewController *forget = [[forgetPasswordViewController alloc]initWithNibName:@"forgetPasswordViewController" bundle:nil];
+    [self.navigationController pushViewController:forget animated:YES];
+}
 //收回键盘
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
