@@ -15,4 +15,6 @@
 //用户头像
 @property (copy, nonatomic)NSString *headerImg;
 
+@property (copy, nonatomic)NSString *userID;
+
 @end

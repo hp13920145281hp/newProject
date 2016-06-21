@@ -94,7 +94,9 @@
     
 }
 
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [GiFHUD dismiss];
+}
 
 
 //动态

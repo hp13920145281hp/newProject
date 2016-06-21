@@ -48,6 +48,8 @@
     self.headerImg.layer.masksToBounds = YES;
     //设置轮播图
     [self setScrollView];
+    //设置添加好友按钮
+    [self setAddBtn];
 }
 
 //轮播图和分页
@@ -77,7 +79,8 @@
 
 //设置添加好友按钮
 - (void)setAddBtn{
-    if ([_model.userName isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]]) {
+    
+    if ([_model.userID isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]]) {
         [self.addFriendsBtn removeFromSuperview];
     }
 }
