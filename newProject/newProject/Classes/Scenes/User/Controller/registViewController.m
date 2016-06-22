@@ -71,11 +71,11 @@
         alert.message = @"两次输入的密码不相同";
         [self presentViewController:alert animated:YES completion:nil];
     }else{
-        Wilddog *registWilddog  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        Wilddog *registWilddog  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com"];
         [registWilddog createUser:_registNameTF.text password:_registPasswordTF.text withValueCompletionBlock:^(NSError * _Nullable error, NSDictionary * _Nonnull result) {
             if (!error) {
                 alert.message = @"注册成功";
-                Wilddog *usersWilddog  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/users"];
+                Wilddog *usersWilddog  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com/users"];
                 NSData *data = UIImageJPEGRepresentation(_registUserImg.image, 0.2);
                 NSString *str = [data base64Encoding];
                 NSDictionary *userInfo = @{

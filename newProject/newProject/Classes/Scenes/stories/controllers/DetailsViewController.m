@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import <Wilddog.h>
 
 @interface DetailsViewController ()<UIScrollViewDelegate>
 
@@ -87,7 +88,19 @@
 
 //添加好友事件
 - (IBAction)addFriendsAC:(UIButton *)sender {
-
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]) {
+        Wilddog *wilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com/fm"];
+        Wilddog *wilddog1 = [wilddog childByAppendingPath:_model.userID];
+        Wilddog *newWilddog = [wilddog1 childByAutoId];
+        NSDictionary *dic = @{@"type":@"request", @"name":[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]};
+        [newWilddog setValue:dic];
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:alertAC];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
 }
 
 

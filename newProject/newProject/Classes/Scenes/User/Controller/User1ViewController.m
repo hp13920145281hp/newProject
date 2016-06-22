@@ -75,7 +75,7 @@
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
         
         //显示登录用户的信息
-        Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang.wilddogio.com/users/%@", [[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]]];
+        Wilddog *ref = [[Wilddog alloc] initWithUrl:[NSString stringWithFormat:@"https://sichuguangguang1.wilddogio.com/users/%@", [[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]]];
         [ref observeEventType:WEventTypeValue withBlock:^(WDataSnapshot *snapshot) {
             if (snapshot.value) {
                 
@@ -106,7 +106,7 @@
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"已退出" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *alertAC = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com"];
         [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"userID"];
         [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"userName"];
         [myRootRef unauth];

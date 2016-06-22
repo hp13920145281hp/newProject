@@ -70,13 +70,13 @@
         NSString *str = [data base64Encoding];
         [muArr addObject:str];
     }
-    Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/stories"];
+    Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com/stories"];
     Wilddog *newWilddog = [storiesWilddog childByAutoId];
     NSDictionary *dic = [[NSDictionary alloc] init];
     if (_dataArr.count > 0) {
-        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr};
+        dic = @{@"userName":[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"], @"text":_textView.text, @"headerImg":_headerImg, @"imgs":muArr,@"userID":[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]};
     }else{
-        dic = @{@"userName":_uesrName, @"text":_textView.text, @"headerImg":_headerImg};
+        dic = @{@"userName":[[NSUserDefaults standardUserDefaults] valueForKey:@"userName"], @"text":_textView.text, @"headerImg":_headerImg, @"userID":[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]};
     }
     
     [newWilddog setValue:dic];

@@ -43,7 +43,7 @@
         alert.message = @"用户名或者密码不能为空";
         [weakSelf presentViewController:alert animated:YES completion:nil];
     }else{
-        Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com"];
+        Wilddog *myRootRef  = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com"];
         [myRootRef authUser:_loginNameLabel.text password:_loginPasswordLabel.text
         withCompletionBlock:^(NSError *error, WAuthData *authData) {
             

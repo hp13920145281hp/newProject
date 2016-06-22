@@ -10,11 +10,9 @@
 
 @interface DynamicViewController : UIViewController
 
-//传值
-@property (copy, nonatomic)NSString *uesrName;
+
 //用户头像
 @property (copy, nonatomic)NSString *headerImg;
 
-@property (copy, nonatomic)NSString *userID;
 
 @end
