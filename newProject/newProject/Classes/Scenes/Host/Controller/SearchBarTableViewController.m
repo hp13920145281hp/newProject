@@ -28,10 +28,6 @@
 
 //搜索的结果存放的数组
 @property (retain ,nonatomic)NSMutableArray*searchResult;
-//搜索控制器控件
-@property (retain ,nonatomic)UISearchController *searchController;
-////用来存放所有景色
-//@property (strong ,nonatomic)NSMutableArray *allSecenaryArray;
 
 @property (strong, nonatomic)UISearchBar *searchBar;
 

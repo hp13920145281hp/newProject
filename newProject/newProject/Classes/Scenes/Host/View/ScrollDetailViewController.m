@@ -8,7 +8,7 @@
 
 #import "ScrollDetailViewController.h"
 
-@interface ScrollDetailViewController ()<UIGestureRecognizerDelegate>
+@interface ScrollDetailViewController ()
 
 @end
 
@@ -33,11 +33,6 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
-    
-    UIGestureRecognizer *singleTap = [[UIGestureRecognizer alloc]initWithTarget:self action:nil];
-    singleTap.cancelsTouchesInView = NO;
-    [self.webView addGestureRecognizer:singleTap];
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -48,10 +48,10 @@
     [self descriptionsview];
 }
 
-//分享按钮点击事件
+#pragma mark---------------------------分享按钮点击事件
 - (void)shareAC:(UIBarButtonItem *)shareBto{
     //如果分享需要回调,那么就必须把 delegate 设置为 self,并实现系统回调方法
-    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"5764fd72e0f55a2bf00030e5" shareText:@"" shareImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_descriptions]]] shareToSnsNames:@[UMShareToSina] delegate:self];
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"5764fd72e0f55a2bf00030e5" shareText:self.detailUrl shareImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_descriptions]]] shareToSnsNames:@[UMShareToSina] delegate:self];
 }
 
 //添加lable,显示详情

@@ -29,13 +29,13 @@
     self.window.rootViewController = rootVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-    
+
     //地图相关
     [self baiduMap];
     
     //设置友盟相关
     [self setUm];
+    
     
     return YES;
 }

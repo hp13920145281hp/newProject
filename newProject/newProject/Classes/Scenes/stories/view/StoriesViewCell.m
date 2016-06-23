@@ -54,13 +54,9 @@
     }
 }
 
-
-
 - (void)layoutSubviews{
-    
     _headerImg.layer.masksToBounds = YES;
     _headerImg.layer.cornerRadius = 5;
-    
 }
 
 
