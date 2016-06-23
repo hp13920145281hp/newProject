@@ -78,7 +78,7 @@
 //获取动态
 - (void)getStories{
     [self setUpGifHUD];
-    Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/stories"];
+    Wilddog *storiesWilddog = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com/stories"];
     [storiesWilddog observeEventType:WEventTypeChildAdded withBlock:^(WDataSnapshot * _Nonnull snapshot) {
         StoriesModel *model = [[StoriesModel alloc] init];
         [model setValuesForKeysWithDictionary:snapshot.value];
@@ -106,7 +106,6 @@
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"userName"]) {
         DynamicViewController *dVC = [[DynamicViewController alloc] init];
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:dVC];
-        dVC.uesrName = _userName;
         dVC.headerImg = _headerImg;
         [self presentModalViewController:nvc animated:YES];
     }else{
@@ -123,12 +122,11 @@
 
 //获取登录的用户名和头像
 - (void)getLoginStatus{
-        Wilddog *userName = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang.wilddogio.com/users"];
+        Wilddog *userName = [[Wilddog alloc] initWithUrl:@"https://sichuguangguang1.wilddogio.com/users"];
         
         Wilddog *newName = [userName childByAppendingPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]];
         
         [newName observeEventType:WEventTypeValue withBlock:^(WDataSnapshot * _Nonnull snapshot) {
-            _userName = snapshot.value[@"userName"];
             _headerImg = snapshot.value[@"headerImg"];
         } withCancelBlock:^(NSError * _Nonnull error) {
             if (error) {
